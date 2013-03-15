@@ -4,6 +4,15 @@
 
 #import <Availability.h>
 
+#ifdef DEBUG
+#define DLog(...) NSLog(@"%s(%p) %@", __PRETTY_FUNCTION__, self, [NSString stringWithFormat:__VA_ARGS__])
+
+#else
+
+#define DLog(...) do { } while(0)
+
+#endif
+
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif

@@ -16,11 +16,14 @@
 		D90905BC16F2C4EB00C6BB5C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905BB16F2C4EB00C6BB5C /* Default.png */; };
 		D90905BE16F2C4EB00C6BB5C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905BD16F2C4EB00C6BB5C /* Default@2x.png */; };
 		D90905C016F2C4EB00C6BB5C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905BF16F2C4EB00C6BB5C /* Default-568h@2x.png */; };
-		D90905C316F2C4EB00C6BB5C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90905C116F2C4EB00C6BB5C /* MainStoryboard.storyboard */; };
-		D90905C616F2C4EB00C6BB5C /* KFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905C516F2C4EB00C6BB5C /* KFBViewController.m */; };
 		D90905CD16F2C50500C6BB5C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90905CC16F2C50500C6BB5C /* CoreBluetooth.framework */; };
 		D90905CF16F2C50F00C6BB5C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90905CE16F2C50F00C6BB5C /* CoreMotion.framework */; };
 		D90905D116F2C51B00C6BB5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90905D016F2C51B00C6BB5C /* AVFoundation.framework */; };
+		D90905DB16F2C62800C6BB5C /* KFBAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905D316F2C62800C6BB5C /* KFBAudioPlayer.m */; };
+		D90905DC16F2C62800C6BB5C /* KFBCentralAlertRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905D516F2C62800C6BB5C /* KFBCentralAlertRecord.m */; };
+		D90905DD16F2C62800C6BB5C /* KFBLedController.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905D716F2C62800C6BB5C /* KFBLedController.m */; };
+		D90905DE16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905DA16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m */; };
+		D90905E016F2C64A00C6BB5C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90905DF16F2C64A00C6BB5C /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,12 +40,19 @@
 		D90905BB16F2C4EB00C6BB5C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		D90905BD16F2C4EB00C6BB5C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		D90905BF16F2C4EB00C6BB5C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		D90905C216F2C4EB00C6BB5C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		D90905C416F2C4EB00C6BB5C /* KFBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFBViewController.h; sourceTree = "<group>"; };
-		D90905C516F2C4EB00C6BB5C /* KFBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFBViewController.m; sourceTree = "<group>"; };
 		D90905CC16F2C50500C6BB5C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D90905CE16F2C50F00C6BB5C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D90905D016F2C51B00C6BB5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D90905D216F2C62800C6BB5C /* KFBAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBAudioPlayer.h; sourceTree = "<group>"; };
+		D90905D316F2C62800C6BB5C /* KFBAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBAudioPlayer.m; sourceTree = "<group>"; };
+		D90905D416F2C62800C6BB5C /* KFBCentralAlertRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBCentralAlertRecord.h; sourceTree = "<group>"; };
+		D90905D516F2C62800C6BB5C /* KFBCentralAlertRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBCentralAlertRecord.m; sourceTree = "<group>"; };
+		D90905D616F2C62800C6BB5C /* KFBLedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBLedController.h; sourceTree = "<group>"; };
+		D90905D716F2C62800C6BB5C /* KFBLedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBLedController.m; sourceTree = "<group>"; };
+		D90905D816F2C62800C6BB5C /* KFBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBMacros.h; sourceTree = "<group>"; };
+		D90905D916F2C62800C6BB5C /* KFBProcessedAccelerometerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBProcessedAccelerometerData.h; sourceTree = "<group>"; };
+		D90905DA16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBProcessedAccelerometerData.m; sourceTree = "<group>"; };
+		D90905DF16F2C64A00C6BB5C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +105,18 @@
 		D90905AF16F2C4EB00C6BB5C /* KeyFobSimulation */ = {
 			isa = PBXGroup;
 			children = (
+				D90905D216F2C62800C6BB5C /* KFBAudioPlayer.h */,
+				D90905D316F2C62800C6BB5C /* KFBAudioPlayer.m */,
+				D90905D416F2C62800C6BB5C /* KFBCentralAlertRecord.h */,
+				D90905D516F2C62800C6BB5C /* KFBCentralAlertRecord.m */,
+				D90905D616F2C62800C6BB5C /* KFBLedController.h */,
+				D90905D716F2C62800C6BB5C /* KFBLedController.m */,
+				D90905D816F2C62800C6BB5C /* KFBMacros.h */,
+				D90905D916F2C62800C6BB5C /* KFBProcessedAccelerometerData.h */,
+				D90905DA16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m */,
 				D90905B816F2C4EB00C6BB5C /* KFBAppDelegate.h */,
 				D90905B916F2C4EB00C6BB5C /* KFBAppDelegate.m */,
-				D90905C116F2C4EB00C6BB5C /* MainStoryboard.storyboard */,
-				D90905C416F2C4EB00C6BB5C /* KFBViewController.h */,
-				D90905C516F2C4EB00C6BB5C /* KFBViewController.m */,
+				D90905DF16F2C64A00C6BB5C /* MainStoryboard.storyboard */,
 				D90905B016F2C4EB00C6BB5C /* Supporting Files */,
 			);
 			path = KeyFobSimulation;
@@ -175,7 +192,7 @@
 				D90905BC16F2C4EB00C6BB5C /* Default.png in Resources */,
 				D90905BE16F2C4EB00C6BB5C /* Default@2x.png in Resources */,
 				D90905C016F2C4EB00C6BB5C /* Default-568h@2x.png in Resources */,
-				D90905C316F2C4EB00C6BB5C /* MainStoryboard.storyboard in Resources */,
+				D90905E016F2C64A00C6BB5C /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +205,10 @@
 			files = (
 				D90905B616F2C4EB00C6BB5C /* main.m in Sources */,
 				D90905BA16F2C4EB00C6BB5C /* KFBAppDelegate.m in Sources */,
-				D90905C616F2C4EB00C6BB5C /* KFBViewController.m in Sources */,
+				D90905DB16F2C62800C6BB5C /* KFBAudioPlayer.m in Sources */,
+				D90905DC16F2C62800C6BB5C /* KFBCentralAlertRecord.m in Sources */,
+				D90905DD16F2C62800C6BB5C /* KFBLedController.m in Sources */,
+				D90905DE16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,14 +221,6 @@
 				D90905B316F2C4EB00C6BB5C /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		D90905C116F2C4EB00C6BB5C /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D90905C216F2C4EB00C6BB5C /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
