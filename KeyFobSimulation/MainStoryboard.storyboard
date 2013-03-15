@@ -56,7 +56,7 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4af-Ei-m7p">
                                 <connections>
-                                    <action selector="advertiseSwitch:" destination="2" eventType="valueChanged" id="Swf-dF-9Xd"/>
+                                    <action selector="advertiseSwitch:" destination="2" eventType="valueChanged" id="evL-RJ-hJl"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Advertise" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbj-Op-K9w">
@@ -145,7 +145,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="advertiseSwitchControl" destination="4af-Ei-m7p" id="P0Y-A8-J00"/>
+                        <outlet property="advertiseSwitchControl" destination="4af-Ei-m7p" id="bhh-HX-vC6"/>
                         <outlet property="batteryLevelLabel" destination="dCE-ma-So6" id="77M-w9-UCz"/>
                         <outlet property="batterySlider" destination="XFc-Yk-pHF" id="cQz-cM-Wix"/>
                         <outlet property="hostBluetoothStatus" destination="cji-Am-ey2" id="cvt-sH-ipN"/>

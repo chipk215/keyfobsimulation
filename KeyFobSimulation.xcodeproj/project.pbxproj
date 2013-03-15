@@ -24,6 +24,13 @@
 		D90905DD16F2C62800C6BB5C /* KFBLedController.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905D716F2C62800C6BB5C /* KFBLedController.m */; };
 		D90905DE16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905DA16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m */; };
 		D90905E016F2C64A00C6BB5C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90905DF16F2C64A00C6BB5C /* MainStoryboard.storyboard */; };
+		D90905E616F2C6DB00C6BB5C /* fobNobackground.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905E516F2C6DB00C6BB5C /* fobNobackground.png */; };
+		D90905EE16F2C70B00C6BB5C /* tinyYellowLED.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905E916F2C70B00C6BB5C /* tinyYellowLED.png */; };
+		D90905EF16F2C70B00C6BB5C /* leftYellowClip1.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905EA16F2C70B00C6BB5C /* leftYellowClip1.png */; };
+		D90905F016F2C70B00C6BB5C /* rightYellowClip1.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905EB16F2C70B00C6BB5C /* rightYellowClip1.png */; };
+		D90905F116F2C70B00C6BB5C /* highbeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D90905EC16F2C70B00C6BB5C /* highbeep.mp3 */; };
+		D90905F216F2C70B00C6BB5C /* lobeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D90905ED16F2C70B00C6BB5C /* lobeep.mp3 */; };
+		D90905F416F2C75000C6BB5C /* KeyfobSimRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +60,17 @@
 		D90905D916F2C62800C6BB5C /* KFBProcessedAccelerometerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBProcessedAccelerometerData.h; sourceTree = "<group>"; };
 		D90905DA16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBProcessedAccelerometerData.m; sourceTree = "<group>"; };
 		D90905DF16F2C64A00C6BB5C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		D90905E116F2C6A600C6BB5C /* KFBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFBViewController.h; sourceTree = "<group>"; };
+		D90905E216F2C6A600C6BB5C /* KFBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFBViewController.m; sourceTree = "<group>"; };
+		D90905E316F2C6C700C6BB5C /* KFBAccelerometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFBAccelerometer.h; sourceTree = "<group>"; };
+		D90905E416F2C6C700C6BB5C /* KFBAccelerometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFBAccelerometer.m; sourceTree = "<group>"; };
+		D90905E516F2C6DB00C6BB5C /* fobNobackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fobNobackground.png; sourceTree = "<group>"; };
+		D90905E916F2C70B00C6BB5C /* tinyYellowLED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tinyYellowLED.png; sourceTree = "<group>"; };
+		D90905EA16F2C70B00C6BB5C /* leftYellowClip1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftYellowClip1.png; sourceTree = "<group>"; };
+		D90905EB16F2C70B00C6BB5C /* rightYellowClip1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightYellowClip1.png; sourceTree = "<group>"; };
+		D90905EC16F2C70B00C6BB5C /* highbeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = highbeep.mp3; sourceTree = "<group>"; };
+		D90905ED16F2C70B00C6BB5C /* lobeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lobeep.mp3; sourceTree = "<group>"; };
+		D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeyfobSimRetina.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +93,7 @@
 		D909059D16F2C4EB00C6BB5C = {
 			isa = PBXGroup;
 			children = (
+				D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */,
 				D90905D016F2C51B00C6BB5C /* AVFoundation.framework */,
 				D90905CE16F2C50F00C6BB5C /* CoreMotion.framework */,
 				D90905CC16F2C50500C6BB5C /* CoreBluetooth.framework */,
@@ -105,6 +124,10 @@
 		D90905AF16F2C4EB00C6BB5C /* KeyFobSimulation */ = {
 			isa = PBXGroup;
 			children = (
+				D90905E116F2C6A600C6BB5C /* KFBViewController.h */,
+				D90905E216F2C6A600C6BB5C /* KFBViewController.m */,
+				D90905E316F2C6C700C6BB5C /* KFBAccelerometer.h */,
+				D90905E416F2C6C700C6BB5C /* KFBAccelerometer.m */,
 				D90905D216F2C62800C6BB5C /* KFBAudioPlayer.h */,
 				D90905D316F2C62800C6BB5C /* KFBAudioPlayer.m */,
 				D90905D416F2C62800C6BB5C /* KFBCentralAlertRecord.h */,
@@ -125,6 +148,12 @@
 		D90905B016F2C4EB00C6BB5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D90905E916F2C70B00C6BB5C /* tinyYellowLED.png */,
+				D90905EA16F2C70B00C6BB5C /* leftYellowClip1.png */,
+				D90905EB16F2C70B00C6BB5C /* rightYellowClip1.png */,
+				D90905EC16F2C70B00C6BB5C /* highbeep.mp3 */,
+				D90905ED16F2C70B00C6BB5C /* lobeep.mp3 */,
+				D90905E516F2C6DB00C6BB5C /* fobNobackground.png */,
 				D90905B116F2C4EB00C6BB5C /* KeyFobSimulation-Info.plist */,
 				D90905B216F2C4EB00C6BB5C /* InfoPlist.strings */,
 				D90905B516F2C4EB00C6BB5C /* main.m */,
@@ -193,6 +222,13 @@
 				D90905BE16F2C4EB00C6BB5C /* Default@2x.png in Resources */,
 				D90905C016F2C4EB00C6BB5C /* Default-568h@2x.png in Resources */,
 				D90905E016F2C64A00C6BB5C /* MainStoryboard.storyboard in Resources */,
+				D90905E616F2C6DB00C6BB5C /* fobNobackground.png in Resources */,
+				D90905EE16F2C70B00C6BB5C /* tinyYellowLED.png in Resources */,
+				D90905EF16F2C70B00C6BB5C /* leftYellowClip1.png in Resources */,
+				D90905F016F2C70B00C6BB5C /* rightYellowClip1.png in Resources */,
+				D90905F116F2C70B00C6BB5C /* highbeep.mp3 in Resources */,
+				D90905F216F2C70B00C6BB5C /* lobeep.mp3 in Resources */,
+				D90905F416F2C75000C6BB5C /* KeyfobSimRetina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
