@@ -18,6 +18,9 @@
 		D90905C016F2C4EB00C6BB5C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905BF16F2C4EB00C6BB5C /* Default-568h@2x.png */; };
 		D90905C316F2C4EB00C6BB5C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D90905C116F2C4EB00C6BB5C /* MainStoryboard.storyboard */; };
 		D90905C616F2C4EB00C6BB5C /* KFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905C516F2C4EB00C6BB5C /* KFBViewController.m */; };
+		D90905CD16F2C50500C6BB5C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90905CC16F2C50500C6BB5C /* CoreBluetooth.framework */; };
+		D90905CF16F2C50F00C6BB5C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90905CE16F2C50F00C6BB5C /* CoreMotion.framework */; };
+		D90905D116F2C51B00C6BB5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90905D016F2C51B00C6BB5C /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		D90905C216F2C4EB00C6BB5C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D90905C416F2C4EB00C6BB5C /* KFBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFBViewController.h; sourceTree = "<group>"; };
 		D90905C516F2C4EB00C6BB5C /* KFBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFBViewController.m; sourceTree = "<group>"; };
+		D90905CC16F2C50500C6BB5C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		D90905CE16F2C50F00C6BB5C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		D90905D016F2C51B00C6BB5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90905D116F2C51B00C6BB5C /* AVFoundation.framework in Frameworks */,
+				D90905CF16F2C50F00C6BB5C /* CoreMotion.framework in Frameworks */,
+				D90905CD16F2C50500C6BB5C /* CoreBluetooth.framework in Frameworks */,
 				D90905AA16F2C4EB00C6BB5C /* UIKit.framework in Frameworks */,
 				D90905AC16F2C4EB00C6BB5C /* Foundation.framework in Frameworks */,
 				D90905AE16F2C4EB00C6BB5C /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +65,9 @@
 		D909059D16F2C4EB00C6BB5C = {
 			isa = PBXGroup;
 			children = (
+				D90905D016F2C51B00C6BB5C /* AVFoundation.framework */,
+				D90905CE16F2C50F00C6BB5C /* CoreMotion.framework */,
+				D90905CC16F2C50500C6BB5C /* CoreBluetooth.framework */,
 				D90905AF16F2C4EB00C6BB5C /* KeyFobSimulation */,
 				D90905A816F2C4EB00C6BB5C /* Frameworks */,
 				D90905A716F2C4EB00C6BB5C /* Products */,
