@@ -24,7 +24,7 @@
           <a href="https://github.com/chipk215/keyfobsimulation" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
-        <img style="width: 168px; height: 238px;" alt="Key Fob Image" src="images/keyfobnobg.png"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img style="width: 148px; height: 256px;" alt="Screen Shot" src="images/screenshot.PNG"><br>
+        <img src="images/keyfobnobg.png" style="width: 168px; height: 238px;" alt="Key Fob Image"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="images/screenshot.PNG" style="width: 148px; height: 256px;" alt="Screen Shot"><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TI Key
 Fob&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Simulator Screen Shot<br>
@@ -432,6 +432,80 @@ reside to the left and right of the image of the body of the key fob.
 When a button is pressed, the corresponding red LED indicator
 representing the key on the body of the fob illuminates with a yellow
 light. <br>
+<br>
+<br>
+<h2>Advertising Functionality</h2>
+The key fob hardware advertises three primary services along with a
+local name, RSSI and a device UUID as depicted in the captured screen
+shot from a BLE scanner :<br>
+<br>
+<img src="images/croppedfobadvertise.png" style="width: 768px; height: 569px;" alt="key fob advertisement"><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; Key Fob Hardware Advertisement<br>
+<br>
+The actual broadcasted advertisement data is listed in the bottom
+section of the display. The key fob peripheral advertises three primary
+services corresponding to the Immediate Alert Service, Transmit Power
+Service, and Link Loss Service in addition to the local name
+"Keyfobdemo".&nbsp; The choice TI made to advertise these three
+services in the limited advertising space available probably coincides
+with the key fob's conformance to the GATT defined Proximity Profile.
+The Proximity Profile relies on the implementation of these three
+services.<br>
+<br>
+The simulator advertises a different set of services due to the
+inability to implement LInk Loss. The TI defined custom Accelerometer
+and Key Press services make up the advertised services for the
+simulator as shown here:<br>
+<br>
+<img src="images/simAdvert.png" style="width: 728px; height: 525px;" alt="simulator advertising">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Simulator
+Advertising Data<br>
+<br>
+<br>
+<h2><span style="font-weight: bold;">Summary of Issues</span></h2>
+The iOS Key Fob Simulator falls short of being a high fidelity simulator in three areas:<br>
+<br>
+&nbsp;&nbsp; 1)&nbsp; Link Loss - inability to detect a terminated connection by the simulator<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; 2) Generic Access Service Device Name Error - iOS
+Framework error prevents the&nbsp;&nbsp;&nbsp; reading the Device Name.<br>
+<br>
+&nbsp;&nbsp;&nbsp; 3) Write Without Response Error - aside from not
+being able to implement Link Loss, the Write Without Response Error
+described in the Immediate Alert Service is the most severe issue
+uncovered in the Core Bluetooth Framework.&nbsp; iOS peripherals will
+simply fail to update writable characteristics that clients have
+written using Write Without Response write commands.&nbsp; This defect
+must be fixed by Apple before a legitimate product offering can be made
+using an iOS based Bluetooth 4.0 peripheral.<br>
+<br>
+<br>
+<h2>Bluetooth Low Energy Scanners </h2>
+&nbsp;&nbsp;&nbsp; Available in the App Store:<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  LightBlue - a Bluetooth Low Energy Device Scanner<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; TI BLE MultiTool - a nice
+scanner which includes graphical data for characteristics<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; TechBasic - a BASIC
+environment for iOS devices enabling BASIC programs to be written and
+executed on iOS platforms without needing xCode or a developer's
+license.<br>
+<br>
+<br>
+<div style="margin-left: 40px;">On GIT:<br>
+<br>
+</div>
+&nbsp;&nbsp;&nbsp; https://github.com/chipk215/ble_scanner - my toy scanner project used for exploratory BLE work.<br>
+<br>
+<br>
+<br>
 <hr><section id="main_content"></section><footer>Keyfobsimulation is maintained by <a href="https://github.com/chipk215">chipk215</a><br>
           This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
         </footer>
