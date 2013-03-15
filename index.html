@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Keyfobsimulation by chipk215</title>
-  </head>
+<html><head>
 
-  <body>
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href="https://fonts.googleapis.com/css?family=Chivo:900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print"><!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><title>Keyfobsimulation by chipk215</title></head><body>
     <div id="container">
       <div class="inner">
 
         <header>
-          <h1>Keyfobsimulation</h1>
+          </header><h1>Keyfobsimulation</h1>
           <h2>TI Key Fob Simulator</h2>
-        </header>
+        
 
         <section id="downloads" class="clearfix">
           <a href="https://github.com/chipk215/keyfobsimulation/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
@@ -28,44 +24,240 @@
           <a href="https://github.com/chipk215/keyfobsimulation" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
-        <hr>
-
-        <section id="main_content">
-          <h3>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </section>
-
-        <footer>
-          Keyfobsimulation is maintained by <a href="https://github.com/chipk215">chipk215</a><br>
+        <img style="width: 92px; height: 131px;" alt="Key Fob Image" src="images/keyfobnobg.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img style="width: 73px; height: 136px;" alt="Screen Shot" src="images/screenshot.PNG"><br>
+<br>
+<h1>iOS Key Fob Simulator</h1>
+The iOS Key Fob Simulator simulates the key fob peripheral that comes
+with the CC2540 Mini Development Kit from Texas Instruments. The
+simulator enables an iPhone to masquerade as a key fob peripheral
+providing accelerometer data, key press notifications, battery level
+data, a dual tone immediate alerts and transmit power data. Master
+devices (Centrals) which can connect to a key fob peripheral should
+also be able to discover and connect to the simulator without any
+modifications.<br>
+<br>
+The simulator requires the hosting iOS device to support Bluetooth 4.0.
+iPhone models beginning with the 4S and 3rd generation iPads are
+capable of hosting the simulator.<br>
+<br>
+The services and characteristics of the simulator are described below.
+The simulator fails the Turing test, compared to an actual key fob, in
+a some specific use cases which are documented.&nbsp; However, the
+simulator does enable some test cases that are not possible using the
+key fob hardware. The simulator is a complimentary tool for developers
+working with the CC2540 Mini Development Kit.<br>
+<br>
+<h2>Quick Start </h2>
+After launching the simulator, slide the Advertising Switch depicted on
+the screen shot to the ON position. Discover and connect to the
+simulator using any Bluetooth Low Energy (BLE) Device Scanner.&nbsp;
+See references at the bottom of the page for BLE device scanners.<br>
+<br>
+<h2>Published Services and Characteristics</h2>
+The hardware version of the key fob exposes eight services:<br>
+<br>
+Generic Access Service&nbsp;&nbsp;&nbsp; (0x1800)<br>
+Generic Attribute Service&nbsp; (0x1801)<br>
+Immediate Alert Service&nbsp;&nbsp;&nbsp; (0x1802)<br>
+Link Loss Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0x1803)<br>
+Tx Power Level Service&nbsp;&nbsp;&nbsp; (0x1804)<br>
+Battery
+Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(0x180F)<br>
+Accelerometer Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0xFFA0)<br>
+Simple Keys Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0xFFE0)<br>
+<br>
+The first six services are Registered GATT Services&nbsp; with the
+Bluetooth SIG&nbsp; while the Accelerometer and Simple Keys services
+are custom service implementations by TI and do not conform to any
+standard profile specification.&nbsp; TI used 16 bit UUIDS for the
+custom services rather than assigning 128 bit UUIDs per the Bluetooth
+4.0 specification..<br>
+<br>
+The simulator exposes only seven of the listed key fob services. The
+Link Loss Service is not implemented in the simulator because&nbsp; the
+iOS Core Bluetooth Framework does not currently (iOS SDK: iOS 6.1)
+provide a mechanism for a slave device to determine when a connection
+to a master device is terminated.&nbsp; There are also defects in the
+Core Framework which prevent implementing the Generic Access Service in
+the simulator to match the prescribed behavior of the Generic Access
+Service implemented by the hardware version of the key fob.&nbsp; These
+issues will be highlighted in the discussions which follow.<br>
+<br>
+<h3>Generic Access Service (0x1800)</h3>
+<h3>Generic Attribute Service (0x1801)</h3>
+<br>
+<h3>Immediate Alert Service (0x1802)</h3>
+<br>
+The Immediate Alert Service is a registered GATT service and exposes a single characteristic:<br>
+<br>
+&nbsp;&nbsp;<span style="font-weight: bold;"> Alert Service Characteristic</span><br>
+<div style="margin-left: 40px;">Alert Level&nbsp; (0x2A06)&nbsp; <br>
+<br>
+</div>
+Alert Level is defined to be a "Write Without Response" characteristic
+meaning that the Master device should be able to write a value to the
+Alert Level characteristic specifying that no return response from the
+peripheral is desired.&nbsp; Three alert level values can be written to
+the Alert Level Characteristic:<br>
+<br>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">Alert Level Values</span><br>
+</div>
+<div style="margin-left: 80px;">No Alert<br>
+</div>
+<div style="margin-left: 80px;">Mild Alert<br>
+</div>
+<div style="margin-left: 80px;">High Alert<br>
+<br>
+</div>
+Writing a "No Alert" value quiets the key fob while the "Mild Alert"
+and "High Alert" values result in two distinct tones to be sounded for
+10 seconds on the key fob. A low frequency tone is associated with
+"Mild Alert" with a higher frequency tone played for a "High
+Alert".&nbsp; In both cases, the tones are accompanied by a blinking
+LED indicator. <br>
+<br>
+The user can manually quiet the key fob when an alert is occurring by pressing the left key on the fob.<br>
+<br>
+Immediate Alert Service Simulator Implementation Issues<br>
+The specification also requires that the alert be turned off if the
+physical connection to the key fob is terminated. The simulator can not
+detect a terminated physical connection and therefore can not turn off
+an active alert when a connection is terminated. An active alert will
+turn off after 10 seconds or by manually turning off the alert using
+the left key on the fob.<br>
+<br>
+A defect in the Core Bluetooth Framework prevents "Write Without
+Response" type writes to be delivered to the peripheral.&nbsp; I have
+filed a defect with Apple (13361937).&nbsp; The work-around requires
+the Master device to Write to the characteristic and request a
+confirmational response indicating that the write occurred (or
+failed).&nbsp; This of course, violates the Bluetooth Specification for
+the Immediate Alert Service.<br>
+<br>
+<h3>Tx Power Level Service (0x1804)</h3>
+<br>
+The Power Level Service is also a registered GATT service and exposes a single Read Only characteristic:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Tx Power Service Characteristic</span><br>
+<div style="margin-left: 80px;">Tx Power Level (0x2A07)<br>
+</div>
+<br>
+The Tx Power Level characteristic returns the transmit power of the key
+fob in dBm. The key fob peripheral transmits at either the 0 dBm level
+or at the -6 dBm level. The user can chose the transmit level by
+pressing the left key on the fob. Left key presses on the fob toggle
+between the two transmit levels.<br>
+<br>
+The simulator behavior mirrors the key fob hardware behavior in that
+the Tx Power Level characteristic returns either 0 dBm or -6 dBm. The
+simulator also enables the user to select the transmit power level
+reported by the characteristic by toggling the left key in the same
+manner as the hardware key fob.&nbsp; The simulator is not capable of
+adjusting the actual transmit power of the iOS device, the simulator
+simply models the behavior of the Tx Power Level characteristic.<br>
+<br>
+<br>
+<h3>Battery Service (0x180F)</h3>
+<br>
+The GATT registered Battery Service exposes a single characteristic
+which returns the percentage of remaining battery life. A fully charged
+battery returns 100 while a completely discharged battery returns 0.<br>
+<br>
+<div style="margin-left: 40px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;"> Battery Service Characteristic</span><br>
+</div>
+<div style="margin-left: 40px;">
+<div style="margin-left: 40px;">&nbsp;&nbsp;&nbsp;&nbsp; Battery Level (0x2A19)<br>
+</div>
+</div>
+<div style="margin-left: 80px;"><br>
+</div>
+The characteristic can be read as required by the Bluetooth SIG and can
+also be subscribed to as TI implemented the optional notification
+support in the key fob hardware.<br>
+<br>
+The simulator also supports both reading and notification subscription
+to obtain the battery level.&nbsp; The battery level is set with the
+slider control shown on the screen shot. As the slider control is moved
+by the user the updated value of the slider is immediately pushed to
+subscribers of the Battery Level characteristic. Otherwise, the battery
+level will be returned to the client when the characteristic is read.<br>
+<br>
+The simulator's ability to change the battery level on demand provides
+an easy testing mechanism for device scanners wanting to test receiving
+updates for a characteristic value that typically changes very
+infrequently.<br>
+<br>
+<h3>Accelerometer Service (0xFFA0)</h3>
+<br>
+The Accelerometer Service is a custom service defined by TI which
+provides accelerometer control (enable/disable) and accelerometer data
+for a tri-axial accelerometer that is embedded in the key fob.&nbsp;
+The Accelerometer Service exposes four characteristics:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Accelerometer Service Characteristics</span><br>
+<div style="margin-left: 40px;">Accelerometer
+Enable&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(0xFFA1)<br>
+</div>
+<div style="margin-left: 40px;">Accelerometer Dynamic Range&nbsp; (0xFFA2)<br>
+</div>
+<div style="margin-left: 40px;">Accelerometer X Axis Data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0xFFA3)<br>
+</div>
+<div style="margin-left: 40px;">Accelerometer Y Axis Data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0xFFA4)<br>
+</div>
+<div style="margin-left: 40px;">Accelerometer Z Axis Data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; (0xFFA5)<br>
+<br>
+</div>
+The Accelerometer Enable characteristic is a Read+Write characteristic.
+A non zero value written to the characteristic enables the
+accelerometer which then begins generating data. A zero value written
+to the accelerometer turns the accelerometer off.&nbsp; The simulator
+models this same behavior.<br>
+<br>
+The Dynamic Range characteristic is a Read only characteristic which
+returns an encoded value representing the dynamic range of the
+accelerometer.&nbsp; The firmware version of the key fob hardware that
+I have loadedin the fob does not allow changing the dynamic range of
+the accelerometer and is set to 2G's corresponding to +/- 1G.&nbsp; TI
+encodes the dynamic range value using the decimal integer value of 20
+to represent a 2G dynamic range. The firmware is capable of
+representing an 8G dynamic range by returning a decimal integer value
+of 80.&nbsp; The simulator always returns a decimal integer value of 20
+for this characteristic.<br>
+<br>
+Accelerometer X-Y-Z characteristics can be read or subscribed to for
+notification.&nbsp; Each axis must be independently read or
+subscribed.&nbsp; Accelerometer data is scaled to 8 bits for each axis
+and does not appear to be preprocessed or filtered.<br>
+<br>
+The simulator models the key fob accelerometer service by also
+providing 3 distinct characteristics corresponding to each
+accelerometer axis.&nbsp; Additionally, an accelerometer characteristic
+only provided by the simulator is exposed:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Additional Simulator Only Accelerometer Characteristic<br>
+<div style="margin-left: 80px;">Tri-Axial Accelerometer Data&nbsp;&nbsp; (0xFFAA)<br>
+<br>
+</div>
+The Tri-Axial Accelerometer Data packages all three accelerometer
+components in the same transmission packet.&nbsp; This enables three
+value to be sent in one atomic packet and eliminates the inter-packet
+delay required between packets for individual component
+transmissions.&nbsp; The inter-packet delay is still required between
+distinct samples of the accelerometer, but eliminates inserting the
+delay when sending X, then Y, then Z in succession. <br>
+<br>
+The simulator updates clients with accelerometer data at a rate of 15 Hz.<br>
+<br>
+<h3>Simple Keys Service (0xFFE0)</h3>
+<br>
+<br>
+<hr><section id="main_content"></section><footer>Keyfobsimulation is maintained by <a href="https://github.com/chipk215">chipk215</a><br>
           This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 
         
       </div>
     </div>
-  </body>
-</html>
+  </body></html>
