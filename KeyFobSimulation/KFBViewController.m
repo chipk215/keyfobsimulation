@@ -578,9 +578,8 @@
  *
  * Description:  Handler for left button on the UI which corresponds to the left key on the key fob.
  *
- *               On the key fob the left key initiates advertising which is not the case with the simulator having decided instead to have a separate advertising switch as a design choice.
  *
- *               Other left key functionality has been implemented to change the transmission power and turn off immediate alerts.
+ *           Key fob left key functionality has been implemented to change the transmission power and turn off immediate alerts.
  *
  * Parameter(s): sender - the button control associated with the touch down event.
  *
