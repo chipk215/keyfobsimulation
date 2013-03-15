@@ -143,7 +143,6 @@
                     <navigationItem key="navigationItem" title="Key Fob Simulator" id="QnY-yQ-KIR">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Help" id="GsE-f3-Nzj"/>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="advertiseSwitchControl" destination="4af-Ei-m7p" id="bhh-HX-vC6"/>
                         <outlet property="batteryLevelLabel" destination="dCE-ma-So6" id="77M-w9-UCz"/>
@@ -184,30 +183,6 @@
         <image name="rightYellowClip1.png" width="265" height="162"/>
         <image name="tinyYellowLED.png" width="90" height="77"/>
     </resources>
-    <classes>
-        <class className="KFBViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KFBViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="advertiseSwitch:" candidateClass="UISwitch"/>
-                <relationship kind="action" name="batteryLevelSlider:" candidateClass="UISlider"/>
-                <relationship kind="action" name="leftButtonDown:" candidateClass="UIButton"/>
-                <relationship kind="action" name="leftButtonUp:" candidateClass="UIButton"/>
-                <relationship kind="action" name="rightButtonDown:" candidateClass="UIButton"/>
-                <relationship kind="action" name="rightButtonUp:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="advertiseSwitchControl" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="batteryLevelLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="batterySlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="hostBluetoothStatus" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftYellowLed" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="rightYellowLed" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tinyYellowLed" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="transmitPowerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

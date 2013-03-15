@@ -31,6 +31,8 @@
 		D90905F116F2C70B00C6BB5C /* highbeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D90905EC16F2C70B00C6BB5C /* highbeep.mp3 */; };
 		D90905F216F2C70B00C6BB5C /* lobeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D90905ED16F2C70B00C6BB5C /* lobeep.mp3 */; };
 		D90905F416F2C75000C6BB5C /* KeyfobSimRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */; };
+		D90905F616F2CA1D00C6BB5C /* KFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905F516F2CA1D00C6BB5C /* KFBViewController.m */; };
+		D90905F916F2CAEA00C6BB5C /* KFBAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905F816F2CAEA00C6BB5C /* KFBAccelerometer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,9 +63,6 @@
 		D90905DA16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBProcessedAccelerometerData.m; sourceTree = "<group>"; };
 		D90905DF16F2C64A00C6BB5C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D90905E116F2C6A600C6BB5C /* KFBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFBViewController.h; sourceTree = "<group>"; };
-		D90905E216F2C6A600C6BB5C /* KFBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFBViewController.m; sourceTree = "<group>"; };
-		D90905E316F2C6C700C6BB5C /* KFBAccelerometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFBAccelerometer.h; sourceTree = "<group>"; };
-		D90905E416F2C6C700C6BB5C /* KFBAccelerometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFBAccelerometer.m; sourceTree = "<group>"; };
 		D90905E516F2C6DB00C6BB5C /* fobNobackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fobNobackground.png; sourceTree = "<group>"; };
 		D90905E916F2C70B00C6BB5C /* tinyYellowLED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tinyYellowLED.png; sourceTree = "<group>"; };
 		D90905EA16F2C70B00C6BB5C /* leftYellowClip1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftYellowClip1.png; sourceTree = "<group>"; };
@@ -71,6 +70,9 @@
 		D90905EC16F2C70B00C6BB5C /* highbeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = highbeep.mp3; sourceTree = "<group>"; };
 		D90905ED16F2C70B00C6BB5C /* lobeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lobeep.mp3; sourceTree = "<group>"; };
 		D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeyfobSimRetina.png; sourceTree = "<group>"; };
+		D90905F516F2CA1D00C6BB5C /* KFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBViewController.m; sourceTree = "<group>"; };
+		D90905F716F2CAE900C6BB5C /* KFBAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBAccelerometer.h; sourceTree = "<group>"; };
+		D90905F816F2CAEA00C6BB5C /* KFBAccelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBAccelerometer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +126,10 @@
 		D90905AF16F2C4EB00C6BB5C /* KeyFobSimulation */ = {
 			isa = PBXGroup;
 			children = (
+				D90905F716F2CAE900C6BB5C /* KFBAccelerometer.h */,
+				D90905F816F2CAEA00C6BB5C /* KFBAccelerometer.m */,
+				D90905F516F2CA1D00C6BB5C /* KFBViewController.m */,
 				D90905E116F2C6A600C6BB5C /* KFBViewController.h */,
-				D90905E216F2C6A600C6BB5C /* KFBViewController.m */,
-				D90905E316F2C6C700C6BB5C /* KFBAccelerometer.h */,
-				D90905E416F2C6C700C6BB5C /* KFBAccelerometer.m */,
 				D90905D216F2C62800C6BB5C /* KFBAudioPlayer.h */,
 				D90905D316F2C62800C6BB5C /* KFBAudioPlayer.m */,
 				D90905D416F2C62800C6BB5C /* KFBCentralAlertRecord.h */,
@@ -245,6 +247,8 @@
 				D90905DC16F2C62800C6BB5C /* KFBCentralAlertRecord.m in Sources */,
 				D90905DD16F2C62800C6BB5C /* KFBLedController.m in Sources */,
 				D90905DE16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m in Sources */,
+				D90905F616F2CA1D00C6BB5C /* KFBViewController.m in Sources */,
+				D90905F916F2CAEA00C6BB5C /* KFBAccelerometer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +363,7 @@
 				D90905CB16F2C4EB00C6BB5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
