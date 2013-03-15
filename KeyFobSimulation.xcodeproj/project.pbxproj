@@ -69,7 +69,7 @@
 		D90905EB16F2C70B00C6BB5C /* rightYellowClip1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightYellowClip1.png; sourceTree = "<group>"; };
 		D90905EC16F2C70B00C6BB5C /* highbeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = highbeep.mp3; sourceTree = "<group>"; };
 		D90905ED16F2C70B00C6BB5C /* lobeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lobeep.mp3; sourceTree = "<group>"; };
-		D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeyfobSimRetina.png; sourceTree = "<group>"; };
+		D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = KeyfobSimRetina.png; path = ../KeyfobSimRetina.png; sourceTree = "<group>"; };
 		D90905F516F2CA1D00C6BB5C /* KFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBViewController.m; sourceTree = "<group>"; };
 		D90905F716F2CAE900C6BB5C /* KFBAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBAccelerometer.h; sourceTree = "<group>"; };
 		D90905F816F2CAEA00C6BB5C /* KFBAccelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBAccelerometer.m; sourceTree = "<group>"; };
@@ -95,7 +95,6 @@
 		D909059D16F2C4EB00C6BB5C = {
 			isa = PBXGroup;
 			children = (
-				D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */,
 				D90905D016F2C51B00C6BB5C /* AVFoundation.framework */,
 				D90905CE16F2C50F00C6BB5C /* CoreMotion.framework */,
 				D90905CC16F2C50500C6BB5C /* CoreBluetooth.framework */,
@@ -150,6 +149,7 @@
 		D90905B016F2C4EB00C6BB5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */,
 				D90905E916F2C70B00C6BB5C /* tinyYellowLED.png */,
 				D90905EA16F2C70B00C6BB5C /* leftYellowClip1.png */,
 				D90905EB16F2C70B00C6BB5C /* rightYellowClip1.png */,
