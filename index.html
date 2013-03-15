@@ -14,7 +14,7 @@
       <div class="inner">
 
         <header>
-          </header><h1>Keyfobsimulation</h1>
+          </header><h1>Key Fob Simulation</h1>
           <h2>TI Key Fob Simulator</h2>
         
 
@@ -24,7 +24,10 @@
           <a href="https://github.com/chipk215/keyfobsimulation" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
-        <img style="width: 92px; height: 131px;" alt="Key Fob Image" src="images/keyfobnobg.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img style="width: 73px; height: 136px;" alt="Screen Shot" src="images/screenshot.PNG"><br>
+        <img style="width: 168px; height: 238px;" alt="Key Fob Image" src="images/keyfobnobg.png"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img style="width: 148px; height: 256px;" alt="Screen Shot" src="images/screenshot.PNG"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TI Key
+Fob&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Simulator Screen Shot<br>
 <br>
 <h1>iOS Key Fob Simulator</h1>
 The iOS Key Fob Simulator simulates the key fob peripheral that comes
@@ -53,26 +56,39 @@ the screen shot to the ON position. Discover and connect to the
 simulator using any Bluetooth Low Energy (BLE) Device Scanner.&nbsp;
 See references at the bottom of the page for BLE device scanners.<br>
 <br>
-<h2>Published Services and Characteristics</h2>
-The hardware version of the key fob exposes eight services:<br>
+<span style="font-weight: bold;">Left Key Functionality</span><br>
+The key fob hardware uses the left and right keys to change the
+internal state of the key fob.&nbsp; For example pressing the right key
+on the key fob initiates advertising for a 30 second interval.&nbsp;
+The simulator provides a much more visible ON/OFF switch to control
+advertising and does not mimic the hardware behavior of the right key.<br>
 <br>
-Generic Access Service&nbsp;&nbsp;&nbsp; (0x1800)<br>
-Generic Attribute Service&nbsp; (0x1801)<br>
-Immediate Alert Service&nbsp;&nbsp;&nbsp; (0x1802)<br>
-Link Loss Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0x1803)<br>
-Tx Power Level Service&nbsp;&nbsp;&nbsp; (0x1804)<br>
+The left key behavior does carry over to the simulator.&nbsp; Left key
+presses toggle the value of the Transmit Power between 0 dBm and -6 dBm
+as described in the Tx Power Service description. The left key also
+provides the user a manual override to quiet an active Immediate Alert.<br>
+<br>
+<h2>Published Services and Characteristics</h2>
+The hardware version of the key fob exposes nine services:<br>
+&nbsp;&nbsp;&nbsp; <br>
+Generic Access Service &nbsp;&nbsp;&nbsp; &nbsp; (0x1800)<br>
+Generic Attribute Service&nbsp;&nbsp;&nbsp;&nbsp; (0x1801)<br>
+Immediate Alert Service&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; (0x1802)<br>
+Link Loss Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; (0x1803)<br>
+Tx Power Level Service&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; (0x1804)<br>
+Device Information Service&nbsp; (0x180A)<br>
 Battery
 Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-(0x180F)<br>
-Accelerometer Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0xFFA0)<br>
-Simple Keys Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (0xFFE0)<br>
+&nbsp;&nbsp;&nbsp; (0x180F)<br>
+Accelerometer Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; (0xFFA0)<br>
+Simple Keys Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; (0xFFE0)<br>
 <br>
-The first six services are Registered GATT Services&nbsp; with the
-Bluetooth SIG&nbsp; while the Accelerometer and Simple Keys services
-are custom service implementations by TI and do not conform to any
-standard profile specification.&nbsp; TI used 16 bit UUIDS for the
+The first seven services are <a style="color: rgb(51, 102, 255);" href="http://developer.bluetooth.org/gatt/services/Pages/ServicesHome.aspx" target="_blank">Registered GATT Services</a>&nbsp;
+with the Bluetooth SIG&nbsp; while the Accelerometer and Simple Keys
+services are custom service implementations by TI and do not conform to
+any standard profile specification.&nbsp; TI used 16 bit UUIDS for the
 custom services rather than assigning 128 bit UUIDs per the Bluetooth
-4.0 specification..<br>
+4.0 specification.<br>
 <br>
 The simulator exposes only seven of the listed key fob services. The
 Link Loss Service is not implemented in the simulator because&nbsp; the
@@ -85,10 +101,84 @@ Service implemented by the hardware version of the key fob.&nbsp; These
 issues will be highlighted in the discussions which follow.<br>
 <br>
 <h3>Generic Access Service (0x1800)</h3>
+The Generic Access Service is a mandatory GATT service which all
+peripherals must implement. The five service characteristics are each
+Read only with only two of the characteristics (Device Name and
+Appearance) required to be implemented to be compliant with the GATT
+specification.<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  <span style="font-weight: bold;">Generic Access Service Characteristics</span><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+Device Name&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+(0x2A00)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+Appearance&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; (0x2A01)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+Peripheral Privacy Flag&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; (0x2A02)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  Reconnection Address&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; (0x2A03)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+Peripheral Preferred Connection Parameters&nbsp;&nbsp;&nbsp; (0x2A04)<br>
+<br>
+The key fob hardware&nbsp; implements each of these characteristics
+with zero values returned for Appearance, Privacy Flag, and the
+Reconnection Address.&nbsp; The Preferred Connection Parameters
+characteristic returns a value of 0x5000A0000000E803.<br>
+<br>
+The iOS Core Bluetooth Framework appears to have a defect associated
+with reading the Device Name characteristic associated with the Generic
+Access Service.&nbsp; An error indicating the Device Name is unreadable
+is always returned when this characteristic is read. The error is
+returned on every peripheral device I have tested including peripheral
+implementations developed using Apple's CBPeripheralManager class in
+which the framework provides the Generic Access Service and
+corresponding Device Name characteristic automatically.&nbsp; I filed a
+defect against the Core Bluetooth Framework identifying this error
+(defect ID 13362139).<br>
+<br>
+As&nbsp; noted, when a peripheral/slave is implemented using the Core
+Bluetooth Framework, and specifically the CBPeripheralManager Class,
+the Generic Access Service is automatically created and exposed by the
+framework itself.&nbsp; The Appearance Characteristic value provided by
+the framework corresponds to "Generic Phone" which corresponds to the
+hosting platform. <br>
+<br>
+At this point I have not researched whether the characteristic values
+provided by the iOS Core Bluetooth Framework can be modified by the
+application before communicating to the Master/Central client.<br>
+<br>
 <h3>Generic Attribute Service (0x1801)</h3>
+The Generic Attribute Service is a mandatory GATT service which is
+comprised of a single control-point characteristic which can not be
+read but only indicated (notification + response confirmation).<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  <span style="font-weight: bold;">Generic Attribute Service Characteristic</span><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; Service Changed (0x2A05)<br>
+<br>
+The key fob hardware provides the required characteristic definition. I
+did not experiment with subscribing for indications for the Service
+Changed characteristic as it was not germane to the key fob
+functionality.<br>
+<br>
+In a manner similar to the Generic Access Service, the Core Bluetooth
+Framework automatically provides and publishes the Generic Attribute
+Service for peripheral applications using the CBPeripheralManager
+Class.&nbsp; The Service Changed characteristic is provided and
+available for indication subscription.<br>
 <br>
 <h3>Immediate Alert Service (0x1802)</h3>
-<br>
 The Immediate Alert Service is a registered GATT service and exposes a single characteristic:<br>
 <br>
 &nbsp;&nbsp;<span style="font-weight: bold;"> Alert Service Characteristic</span><br>
@@ -135,8 +225,14 @@ confirmational response indicating that the write occurred (or
 failed).&nbsp; This of course, violates the Bluetooth Specification for
 the Immediate Alert Service.<br>
 <br>
-<h3>Tx Power Level Service (0x1804)</h3>
+<h3>Link Loss Service (0x1803)</h3>
+As noted in the introductory section above, the simulator can not
+implement the Link Loss Service because the iOS Core Bluetooth
+Framework does not provide a mechanism for detecting a terminated&nbsp;
+or dropped connection between the peripheral and its connected client.<br>
+
 <br>
+<h3>Tx Power Level Service (0x1804)</h3>
 The Power Level Service is also a registered GATT service and exposes a single Read Only characteristic:<br>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Tx Power Service Characteristic</span><br>
@@ -156,10 +252,75 @@ reported by the characteristic by toggling the left key in the same
 manner as the hardware key fob.&nbsp; The simulator is not capable of
 adjusting the actual transmit power of the iOS device, the simulator
 simply models the behavior of the Tx Power Level characteristic.<br>
+<span style="font-weight: bold;"><br>
+</span>
+<h3><span style="font-weight: bold;">Device Information </span>Service (0x180A)</h3>
+
+The GAT registered Device Information Service provides manufacturer or
+vendor information about a device. Though the key fob hardware exposes
+this service the data values the service provides are simply
+placeholders for the corresponding characteristics.&nbsp; Each of the
+characteristics defined by the Device Information Service are Read only
+and none are required to be implemented since each characteristic is
+considered optional.<br>
 <br>
+<div style="margin-left: 40px;"><span style="font-weight: bold;">Device Information Service Characteristics</span><br>
+</div>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Manufacturer
+Name String &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+&nbsp; &nbsp; (0x2A29)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  Model Number String&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; (0x2A24)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Serial Number
+String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+(0x2A25)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Hardware
+Revision String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; (0x2A27)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  Firmware Revision String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  (0x2A26)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  Software Revision String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  (0x2A28)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; System
+ID&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; (0x2A23)
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Regulatory
+Certification Data List&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; (0x2A2A)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; PnP
+ID&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; (0x2A50)<br>
+<br>
+The key fob hardware implements each of these characteristics but
+simply echoes the&nbsp; characteristic name as the value for each
+characteristic.&nbsp; Examples:<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Characteristic&nbsp;</span>&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style="font-weight: bold;"> Value</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp; Manufacturer
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"Manufacturer Name"<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Model Number&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+"Model Number"<br>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Serial
+Number&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; "Serial Number"<br>
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+etc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; ...<br>
+<br>
+<span style="color: rgb(255, 153, 0);">Simulator behavior: Not implemented yet -- will follow the behavior of the key fob.</span><br>
 <br>
 <h3>Battery Service (0x180F)</h3>
-<br>
 The GATT registered Battery Service exposes a single characteristic
 which returns the percentage of remaining battery life. A fully charged
 battery returns 100 while a completely discharged battery returns 0.<br>
@@ -189,7 +350,6 @@ updates for a characteristic value that typically changes very
 infrequently.<br>
 <br>
 <h3>Accelerometer Service (0xFFA0)</h3>
-<br>
 The Accelerometer Service is a custom service defined by TI which
 provides accelerometer control (enable/disable) and accelerometer data
 for a tri-axial accelerometer that is embedded in the key fob.&nbsp;
@@ -218,7 +378,7 @@ models this same behavior.<br>
 The Dynamic Range characteristic is a Read only characteristic which
 returns an encoded value representing the dynamic range of the
 accelerometer.&nbsp; The firmware version of the key fob hardware that
-I have loadedin the fob does not allow changing the dynamic range of
+I have loaded in the fob does not allow changing the dynamic range of
 the accelerometer and is set to 2G's corresponding to +/- 1G.&nbsp; TI
 encodes the dynamic range value using the decimal integer value of 20
 to represent a 2G dynamic range. The firmware is capable of
@@ -236,7 +396,7 @@ providing 3 distinct characteristics corresponding to each
 accelerometer axis.&nbsp; Additionally, an accelerometer characteristic
 only provided by the simulator is exposed:<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Additional Simulator Only Accelerometer Characteristic<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Additional Simulator Only Accelerometer Characteristic</span><br>
 <div style="margin-left: 80px;">Tri-Axial Accelerometer Data&nbsp;&nbsp; (0xFFAA)<br>
 <br>
 </div>
@@ -251,8 +411,27 @@ delay when sending X, then Y, then Z in succession. <br>
 The simulator updates clients with accelerometer data at a rate of 15 Hz.<br>
 <br>
 <h3>Simple Keys Service (0xFFE0)</h3>
+The Simple Key Service is another custom service defined by TI which
+enables the remote monitoring of the two keys that are found on the key
+fob.&nbsp; A single characteristic is exposed by the service which
+supports subscriptions for notifications of the state changes
+associated with the keys:<br>
 <br>
+<div style="margin-left: 80px;"><span style="font-weight: bold;">Key Press Service Characteristic</span><br>
+<div style="margin-left: 40px;">Key Press State&nbsp; (0xFFE1)<br>
+</div>
+</div>
 <br>
+The Key Press State encodes four values. A value of 0x00 indicates that
+neither key is pressed.&nbsp; A value of 0x01 indicates that the left
+key is pressed. A value of 0x02 indicates the right key is pressed. The
+final value, 0x03 indicates that both keys are pressed.<br>
+<br>
+The simulator uses two button controls for the user to press which
+reside to the left and right of the image of the body of the key fob.
+When a button is pressed, the corresponding red LED indicator
+representing the key on the body of the fob illuminates with a yellow
+light. <br>
 <hr><section id="main_content"></section><footer>Keyfobsimulation is maintained by <a href="https://github.com/chipk215">chipk215</a><br>
           This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
         </footer>
