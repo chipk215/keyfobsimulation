@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 
+
   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -34,7 +35,7 @@ The iOS Key Fob Simulator simulates the key fob peripheral that comes
 with the CC2540 Mini Development Kit from Texas Instruments. The
 simulator enables an iPhone to masquerade as a key fob peripheral
 providing accelerometer data, key press notifications, battery level
-data, a dual tone immediate alerts and transmit power data. Master
+data, a dual tone immediate alert and transmit power data. Master
 devices (Centrals) which can connect to a key fob peripheral should
 also be able to discover and connect to the simulator without any
 modifications.<br>
@@ -44,8 +45,7 @@ iPhone models beginning with the 4S and 3rd generation iPads are
 capable of hosting the simulator.<br>
 <br>
 The services and characteristics of the simulator are described below.
-The simulator fails the Turing test, compared to an actual key fob, in
-a some specific use cases which are documented.&nbsp; However, the
+The simulator fails the Turing test compared to an actual key fob in specific use cases which are documented.&nbsp; However, the
 simulator does enable some test cases that are not possible using the
 key fob hardware. The simulator is a complimentary tool for developers
 working with the CC2540 Mini Development Kit.<br>
@@ -279,8 +279,12 @@ String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Hardware
 Revision String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; (0x2A27)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  Firmware Revision String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  (0x2A26)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  Software Revision String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  (0x2A28)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Firmware
+Revision String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; (0x2A26)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Software
+Revision String&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; (0x2A28)<br>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; System
 ID&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
@@ -471,7 +475,7 @@ Advertising Data<br>
 <h2><span style="font-weight: bold;">Summary of Issues</span></h2>
 The iOS Key Fob Simulator falls short of being a high fidelity simulator in three areas:<br>
 <br>
-&nbsp;&nbsp; 1)&nbsp; Link Loss - inability to detect a terminated connection by the simulator<br>
+&nbsp;&nbsp; 1)&nbsp; Link Loss - inability to detect a terminated connection by the simulator.<br>
 &nbsp;&nbsp;&nbsp; <br>
 &nbsp;&nbsp;&nbsp; 2) Generic Access Service Device Name Error - iOS
 Framework error prevents the&nbsp;&nbsp;&nbsp; reading the Device Name.<br>
