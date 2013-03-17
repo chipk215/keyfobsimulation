@@ -69,6 +69,19 @@
 @property (strong, nonatomic) KFBAudioPlayer *lowTonePlayer;
 @property (strong, nonatomic) KFBAudioPlayer *highTonePlayer;
 
+// Device Information Service
+@property (strong, nonatomic) CBMutableService *deviceInformationService;
+@property (strong, nonatomic) CBMutableCharacteristic *manufacturerName;
+@property (strong, nonatomic) CBMutableCharacteristic *modelNumber;
+@property (strong, nonatomic) CBMutableCharacteristic *serialNumber;
+@property (strong, nonatomic) CBMutableCharacteristic *hardwareRevision;
+@property (strong, nonatomic) CBMutableCharacteristic *firmwareRevision;
+@property (strong, nonatomic) CBMutableCharacteristic *softwareRevision;
+@property (strong, nonatomic) CBMutableCharacteristic *systemID;
+@property (strong, nonatomic) CBMutableCharacteristic *reguatoryCertification;
+@property (strong, nonatomic) CBMutableCharacteristic *pnpID;
+
+
 // displays status of bluetooth adapater status for peripheralManager
 @property (weak, nonatomic) IBOutlet UILabel *hostBluetoothStatus;
 
@@ -502,10 +515,130 @@
                                                         permissions:(CBAttributePermissionsReadable + CBAttributePermissionsWriteable)];
         
         _immediateAlertService.characteristics = [NSArray arrayWithObjects:_alertLevel,nil];
+    }
+    return _immediateAlertService;
+}
+
+
+#define SYSTEM_ID_LENGTH 8
+// Helper method which generates a fake system ID
+-(NSData *)getSystemData
+{
+    unsigned char systemIDBytes[SYSTEM_ID_LENGTH] = {0x12, 0x34, 0x56, 0xFF, 0xFE, 0x9A,0xBC,  0xDE};
+    
+    return [NSData dataWithBytes:(const void *)systemIDBytes length:SYSTEM_ID_LENGTH];
+}
+
+
+#define REGULATORY_LIST_LENGTH 14
+// Helper method which generates regulatory data returned by key fob
+-(NSData *)getRegulatoryData
+{
+    unsigned char regulatoryBytes[REGULATORY_LIST_LENGTH] = {0xFE, 0x00, 0x65, 0x78, 0x70, 0x65, 0x72, 0x69, 0x6D, 0x65, 0x6E, 0x74, 0x61, 0x6C};
+    
+    return [NSData dataWithBytes:(const void *)regulatoryBytes length:REGULATORY_LIST_LENGTH];
+}
+
+
+#define PNP_LENGTH 7
+// Helper method which generates PNP data returned by key fob
+-(NSData *)getPNPData
+{
+    unsigned char pnpBytes[PNP_LENGTH] = {0x01, 0x0D, 0x00, 0x00, 0x00, 0x10, 0x01};
+    
+    return [NSData dataWithBytes:(const void *)pnpBytes length:PNP_LENGTH];
+}
+
+/*
+ *
+ * Method Name:  deviceInformationService
+ *
+ * Description:  Defines the Device Information Service and characteristics
+ *
+ * Parameter(s): none
+ *
+ */
+-(CBMutableService *)deviceInformationService
+{
+    if (_deviceInformationService == nil)
+    {
+        CBUUID *uuid = [CBUUID UUIDWithString:DEVICE_INFORMATION_SERVICE];
+        _deviceInformationService = [[CBMutableService alloc]initWithType:uuid primary:YES];
+        
+        CBUUID *manufacturerUUID = [CBUUID UUIDWithString:MANUFACTURER_NAME_CHARACTERISTIC];
+        NSData *manufacturerData = [MANUFACTURER_CHARACTERISTIC_VALUE dataUsingEncoding:NSUTF8StringEncoding];
+        _manufacturerName = [[CBMutableCharacteristic alloc] initWithType:manufacturerUUID
+                                                               properties:CBCharacteristicPropertyRead
+                                                                    value:manufacturerData
+                                                              permissions:CBAttributePermissionsReadable];
+        
+        CBUUID *modelUUID = [CBUUID UUIDWithString:MODEL_NUMBERCHARACTERISTIC];
+        NSData *modelData = [MODEL_NUMBER_CHARACTERISTIC_VALUE dataUsingEncoding:NSUTF8StringEncoding];
+        _modelNumber = [[CBMutableCharacteristic alloc] initWithType:modelUUID
+                                                               properties:CBCharacteristicPropertyRead
+                                                                    value:modelData
+                                                              permissions:CBAttributePermissionsReadable];
+        
+        CBUUID *serialUUID = [CBUUID UUIDWithString:MODEL_NUMBERCHARACTERISTIC];
+        NSData *serialData = [MODEL_NUMBER_CHARACTERISTIC_VALUE dataUsingEncoding:NSUTF8StringEncoding];
+        _serialNumber = [[CBMutableCharacteristic alloc] initWithType:serialUUID
+                                                          properties:CBCharacteristicPropertyRead
+                                                               value:serialData
+                                                         permissions:CBAttributePermissionsReadable];
+
+        CBUUID *hardwareUUID = [CBUUID UUIDWithString:HARDWARE_REVISION_CHARACTERISTIC];
+        NSData *hardwareData = [HARDWARE_NUMBER_CHARACTERISTIC_VALUE dataUsingEncoding:NSUTF8StringEncoding];
+        _hardwareRevision = [[CBMutableCharacteristic alloc] initWithType:hardwareUUID
+                                                           properties:CBCharacteristicPropertyRead
+                                                                value:hardwareData
+                                                          permissions:CBAttributePermissionsReadable];
+        
+        CBUUID *softwareUUID = [CBUUID UUIDWithString:SOFTWARE_REVISION_CHARACTERISTIC];
+        NSData *softwareData = [SOFTWARE_NUMBER_CHARACTERISTIC_VALUE dataUsingEncoding:NSUTF8StringEncoding];
+        _softwareRevision = [[CBMutableCharacteristic alloc] initWithType:softwareUUID
+                                                               properties:CBCharacteristicPropertyRead
+                                                                    value:softwareData
+                                                              permissions:CBAttributePermissionsReadable];
+        
+        CBUUID *firmwareUUID = [CBUUID UUIDWithString:FIRMWARE_REVISION_CHARACTERISTIC];
+        NSData *firmwareData = [FIRMWARE_NUMBER_CHARACTERISTIC_VALUE dataUsingEncoding:NSUTF8StringEncoding];
+        _firmwareRevision = [[CBMutableCharacteristic alloc] initWithType:firmwareUUID
+                                                               properties:CBCharacteristicPropertyRead
+                                                                    value:firmwareData
+                                                              permissions:CBAttributePermissionsReadable];
+        
+        
+        CBUUID *systemUUID = [CBUUID UUIDWithString:SYSTEM_ID_CHARACTERISTIC];
+        NSData *systemData = [self getSystemData];
+        _systemID = [[CBMutableCharacteristic alloc] initWithType:systemUUID
+                                                               properties:CBCharacteristicPropertyRead
+                                                                    value:systemData
+                                                              permissions:CBAttributePermissionsReadable];
+        
+        CBUUID *regulatoryUUID = [CBUUID UUIDWithString:REGULATORY_CERTIFICATION_CHARACTERISTIC];
+        NSData *regulatoryData = [self getRegulatoryData];
+        _reguatoryCertification = [[CBMutableCharacteristic alloc] initWithType:regulatoryUUID
+                                                       properties:CBCharacteristicPropertyRead
+                                                            value:regulatoryData
+                                                      permissions:CBAttributePermissionsReadable];
+        
+        
+        CBUUID *pnpUUID = [CBUUID UUIDWithString:PNP_ID_CHARACTERISTIC];
+        NSData *pnpData = [self getPNPData];
+        _pnpID = [[CBMutableCharacteristic alloc] initWithType:pnpUUID
+                                                    properties:CBCharacteristicPropertyRead
+                                                         value:pnpData
+                                                    permissions:CBAttributePermissionsReadable];
+        
+      
+        _deviceInformationService.characteristics =  [NSArray arrayWithObjects:_manufacturerName,
+                                                      _modelNumber, _serialNumber, _hardwareRevision,
+                                                      _softwareRevision, _firmwareRevision, _systemID,
+                                                      _reguatoryCertification, _pnpID, nil];
         
     }
     
-    return _immediateAlertService;
+    return _deviceInformationService;
 }
 
 
@@ -541,6 +674,7 @@
     [self.peripheralManager addService:self.accelerometerService];
     [self.peripheralManager addService:self.transmitPowerService];
     [self.peripheralManager addService:self.immediateAlertService];
+    [self.peripheralManager addService:self.deviceInformationService];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
