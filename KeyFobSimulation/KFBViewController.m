@@ -1042,7 +1042,7 @@
  *
  * Method Name:  getRecordForCentral
  *
- * Description:  Returns the record i the list corresponding to the central passed in by argument.
+ * Description:  Returns the record in the list corresponding to the central passed in by argument.
  *               If corresponding record not found then return nil.
  *
  * Parameter(s): central - the central to look for.
