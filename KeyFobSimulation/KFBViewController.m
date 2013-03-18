@@ -524,7 +524,7 @@
 // Helper method which generates a fake system ID
 -(NSData *)getSystemData
 {
-    unsigned char systemIDBytes[SYSTEM_ID_LENGTH] = {0x12, 0x34, 0x56, 0xFF, 0xFE, 0x9A,0xBC,  0xDE};
+    unsigned char systemIDBytes[SYSTEM_ID_LENGTH] = {0x0D, 0x76, 0x9B, 0x00, 0x00, 0xE5, 0xC5,  0x78};
     
     return [NSData dataWithBytes:(const void *)systemIDBytes length:SYSTEM_ID_LENGTH];
 }
@@ -579,8 +579,8 @@
                                                                     value:modelData
                                                               permissions:CBAttributePermissionsReadable];
         
-        CBUUID *serialUUID = [CBUUID UUIDWithString:MODEL_NUMBERCHARACTERISTIC];
-        NSData *serialData = [MODEL_NUMBER_CHARACTERISTIC_VALUE dataUsingEncoding:NSUTF8StringEncoding];
+        CBUUID *serialUUID = [CBUUID UUIDWithString:SERIAL_NUMBER_CHARACTERISTIC];
+        NSData *serialData = [SERIAL_NUMBER_CHARACTERISTIC_VALUE dataUsingEncoding:NSUTF8StringEncoding];
         _serialNumber = [[CBMutableCharacteristic alloc] initWithType:serialUUID
                                                           properties:CBCharacteristicPropertyRead
                                                                value:serialData
