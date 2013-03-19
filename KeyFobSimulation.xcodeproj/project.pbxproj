@@ -33,6 +33,7 @@
 		D90905F416F2C75000C6BB5C /* KeyfobSimRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */; };
 		D90905F616F2CA1D00C6BB5C /* KFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905F516F2CA1D00C6BB5C /* KFBViewController.m */; };
 		D90905F916F2CAEA00C6BB5C /* KFBAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905F816F2CAEA00C6BB5C /* KFBAccelerometer.m */; };
+		D9975DBA16F8C7DF00BA993D /* KFBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9975DB916F8C7DF00BA993D /* KFBAboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,8 @@
 		D90905F516F2CA1D00C6BB5C /* KFBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBViewController.m; sourceTree = "<group>"; };
 		D90905F716F2CAE900C6BB5C /* KFBAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBAccelerometer.h; sourceTree = "<group>"; };
 		D90905F816F2CAEA00C6BB5C /* KFBAccelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBAccelerometer.m; sourceTree = "<group>"; };
+		D9975DB816F8C7DF00BA993D /* KFBAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBAboutViewController.h; sourceTree = "<group>"; };
+		D9975DB916F8C7DF00BA993D /* KFBAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBAboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				D90905B816F2C4EB00C6BB5C /* KFBAppDelegate.h */,
 				D90905B916F2C4EB00C6BB5C /* KFBAppDelegate.m */,
 				D90905DF16F2C64A00C6BB5C /* MainStoryboard.storyboard */,
+				D9975DB816F8C7DF00BA993D /* KFBAboutViewController.h */,
+				D9975DB916F8C7DF00BA993D /* KFBAboutViewController.m */,
 				D90905B016F2C4EB00C6BB5C /* Supporting Files */,
 			);
 			path = KeyFobSimulation;
@@ -249,6 +254,7 @@
 				D90905DE16F2C62800C6BB5C /* KFBProcessedAccelerometerData.m in Sources */,
 				D90905F616F2CA1D00C6BB5C /* KFBViewController.m in Sources */,
 				D90905F916F2CAEA00C6BB5C /* KFBAccelerometer.m in Sources */,
+				D9975DBA16F8C7DF00BA993D /* KFBAboutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

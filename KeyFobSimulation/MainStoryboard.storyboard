@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C2034" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uzA-dG-7hn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uzA-dG-7hn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--About View Controller-->
+        <scene sceneID="hOJ-U7-C8b">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" id="F6e-5m-gJR" customClass="KFBAboutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="104-BW-pph">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleAspectFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g88-kJ-PUb">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="301" id="UuA-tY-var"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="378" type="user" id="zN9-En-f6e"/>
+                                </constraints>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Key Fob Simulator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvU-a2-N1s">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="Lyl-Xe-J5B"/>
+                                    <constraint firstAttribute="height" constant="25" type="user" id="lvj-a7-ydn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Connect to Key Fob with any BLE client." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyz-Vv-5hW">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="MNO-m5-kFY"/>
+                                    <constraint firstAttribute="height" constant="27" type="user" id="cNk-Z0-hYK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KC7-i8-gnu">
+                                <items>
+                                    <barButtonItem title="Back" id="HEd-Qz-Xwf">
+                                        <connections>
+                                            <action selector="backButtonHandler:" destination="F6e-5m-gJR" id="1DG-Ex-Sx7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Browser Error Message Label " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCG-es-voc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" type="user" id="Den-qC-5C4"/>
+                                    <constraint firstAttribute="width" constant="230" id="p3Z-9N-vfT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JCG-es-voc" firstAttribute="leading" secondItem="Xyz-Vv-5hW" secondAttribute="leading" type="default" id="Jn9-1M-a9O"/>
+                            <constraint firstItem="Xyz-Vv-5hW" firstAttribute="leading" secondItem="104-BW-pph" secondAttribute="leading" constant="11" id="NbB-Vr-Tpd"/>
+                            <constraint firstItem="g88-kJ-PUb" firstAttribute="centerX" secondItem="kvU-a2-N1s" secondAttribute="centerX" type="default" id="ZDA-ql-9Ac"/>
+                            <constraint firstItem="g88-kJ-PUb" firstAttribute="top" secondItem="JCG-es-voc" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="acn-1K-ggY"/>
+                            <constraint firstAttribute="bottom" secondItem="g88-kJ-PUb" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="bcP-Gu-o9Z"/>
+                            <constraint firstItem="g88-kJ-PUb" firstAttribute="leading" secondItem="JCG-es-voc" secondAttribute="leading" type="default" id="hrj-ac-x8S"/>
+                            <constraint firstItem="kvU-a2-N1s" firstAttribute="top" secondItem="104-BW-pph" secondAttribute="top" constant="48" type="user" id="o3O-06-Uit"/>
+                            <constraint firstItem="KC7-i8-gnu" firstAttribute="top" secondItem="104-BW-pph" secondAttribute="top" constant="-4" id="pUp-wz-9TK"/>
+                            <constraint firstItem="KC7-i8-gnu" firstAttribute="leading" secondItem="104-BW-pph" secondAttribute="leading" type="default" id="qqA-nH-gF6"/>
+                            <constraint firstItem="KC7-i8-gnu" firstAttribute="trailing" secondItem="104-BW-pph" secondAttribute="trailing" type="default" id="rjC-CO-kv6"/>
+                            <constraint firstItem="Xyz-Vv-5hW" firstAttribute="top" secondItem="kvU-a2-N1s" secondAttribute="bottom" constant="13" type="user" id="rpq-kO-Jbt"/>
+                            <constraint firstItem="JCG-es-voc" firstAttribute="top" secondItem="Xyz-Vv-5hW" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="vbN-XJ-tKs"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="errorMessageLabel" destination="JCG-es-voc" id="BsW-6T-bz2"/>
+                        <outlet property="webView" destination="g88-kJ-PUb" id="Sok-7L-yCL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xJe-Dr-ONN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070" y="-212"/>
+        </scene>
         <!--View Controller - Key Fob-->
         <scene sceneID="5">
             <objects>
@@ -115,10 +194,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="4af-Ei-m7p" secondAttribute="bottom" constant="53" id="062-6Z-XIn"/>
+                            <constraint firstAttribute="bottom" secondItem="XFc-Yk-pHF" secondAttribute="bottom" constant="96" id="0r2-lN-E2O"/>
                             <constraint firstItem="jJI-s5-WjY" firstAttribute="top" secondItem="3" secondAttribute="top" constant="57" id="5mM-t0-yhs"/>
                             <constraint firstItem="jJI-s5-WjY" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="99" id="9mi-cV-QTY"/>
                             <constraint firstItem="dCE-ma-So6" firstAttribute="centerX" secondItem="TQu-WQ-k0Z" secondAttribute="centerX" type="default" id="CKk-MV-MMH"/>
                             <constraint firstItem="hNO-2P-GM7" firstAttribute="baseline" secondItem="1UV-Lo-fpj" secondAttribute="baseline" type="default" id="HLb-vZ-aQr"/>
+                            <constraint firstItem="XFc-Yk-pHF" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="LBD-Du-ZH5"/>
                             <constraint firstItem="4af-Ei-m7p" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="MN9-06-kYw"/>
                             <constraint firstItem="1UV-Lo-fpj" firstAttribute="top" secondItem="3" secondAttribute="top" constant="117" id="NtM-hj-C4I"/>
                             <constraint firstAttribute="trailing" secondItem="IyN-s6-WsA" secondAttribute="trailing" constant="132" id="Oan-wk-n8z"/>
@@ -130,18 +211,20 @@
                             <constraint firstItem="WLF-QW-Nlt" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="133" id="cwW-BX-BQJ"/>
                             <constraint firstItem="cji-Am-ey2" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="d5k-iI-9rh"/>
                             <constraint firstItem="XFc-Yk-pHF" firstAttribute="centerX" secondItem="dCE-ma-So6" secondAttribute="centerX" type="default" id="hWC-jM-fqE"/>
-                            <constraint firstAttribute="bottom" secondItem="dCE-ma-So6" secondAttribute="bottom" constant="140" id="hyi-TQ-4O4"/>
-                            <constraint firstAttribute="bottom" secondItem="XFc-Yk-pHF" secondAttribute="bottom" constant="79" id="lyy-vT-Gkj"/>
                             <constraint firstAttribute="bottom" secondItem="VYk-aS-H7m" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="mWH-L6-tfn"/>
                             <constraint firstItem="VYk-aS-H7m" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="omz-Iw-1A3"/>
-                            <constraint firstItem="TQu-WQ-k0Z" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="uRD-cu-kSk"/>
                             <constraint firstItem="TQu-WQ-k0Z" firstAttribute="centerX" secondItem="cji-Am-ey2" secondAttribute="centerX" type="default" id="wjU-HU-Hun"/>
                             <constraint firstItem="TQu-WQ-k0Z" firstAttribute="top" secondItem="3" secondAttribute="top" constant="72" id="z00-64-Fr5"/>
                             <constraint firstItem="gbj-Op-K9w" firstAttribute="trailing" secondItem="4af-Ei-m7p" secondAttribute="trailing" type="default" id="z6Z-KD-FQP"/>
+                            <constraint firstAttribute="bottom" secondItem="dCE-ma-So6" secondAttribute="bottom" constant="155" id="zvD-3y-O48"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Key Fob Simulator" id="QnY-yQ-KIR">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Help" id="GsE-f3-Nzj"/>
+                    <navigationItem key="navigationItem" title="  Key Fob Simulator" id="QnY-yQ-KIR">
+                        <barButtonItem key="leftBarButtonItem" title="About" id="GsE-f3-Nzj">
+                            <connections>
+                                <segue destination="F6e-5m-gJR" kind="modal" identifier="About" modalTransitionStyle="flipHorizontal" id="FlM-6c-6gK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="advertiseSwitchControl" destination="4af-Ei-m7p" id="bhh-HX-vC6"/>
@@ -163,6 +246,7 @@
             <objects>
                 <navigationController id="uzA-dG-7hn" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aed-ZA-dQY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -183,6 +267,38 @@
         <image name="rightYellowClip1.png" width="265" height="162"/>
         <image name="tinyYellowLED.png" width="90" height="77"/>
     </resources>
+    <classes>
+        <class className="KFBAboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KFBAboutViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonHandler:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="errorMessageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="KFBViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KFBViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="advertiseSwitch:" candidateClass="UISwitch"/>
+                <relationship kind="action" name="batteryLevelSlider:" candidateClass="UISlider"/>
+                <relationship kind="action" name="leftButtonDown:" candidateClass="UIButton"/>
+                <relationship kind="action" name="leftButtonUp:" candidateClass="UIButton"/>
+                <relationship kind="action" name="rightButtonDown:" candidateClass="UIButton"/>
+                <relationship kind="action" name="rightButtonUp:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="advertiseSwitchControl" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="batteryLevelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="batterySlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="hostBluetoothStatus" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftYellowLed" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="rightYellowLed" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tinyYellowLed" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="transmitPowerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
