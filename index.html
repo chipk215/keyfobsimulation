@@ -29,7 +29,8 @@
 <div class="inner"> <header> </header>
 <h1>Key Fob Simulation</h1>
 <h2>TI Key Fob Simulator</h2>
-<section id="downloads" class="clearfix"> <a href="https://github.com/chipk215/keyfobsimulation/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a> <a href="https://github.com/chipk215/keyfobsimulation/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a> <a href="https://github.com/chipk215/keyfobsimulation" id="view-on-github" class="button"><span>View on GitHub</span></a></section><br>
+<section id="downloads" class="clearfix"> <a href="https://github.com/chipk215/keyfobsimulation/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a> <a href="https://github.com/chipk215/keyfobsimulation/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a> <a href="https://github.com/chipk215/keyfobsimulation" id="view-on-github" class="button"><span>View on GitHub</span></a></section>
+<br>
 <table style="text-align: left; width: 569px; height: 312px;" border="1" cellpadding="2" cellspacing="2">
   <tbody>
     <tr>
@@ -49,8 +50,8 @@ Screen Shot</small></small></small></td>
 <br>
 <br>
 <h1>iOS Key Fob Simulator</h1>
-The iOS Key Fob Simulator simulates the key fob peripheral that comes
-with the CC2540 Mini Development Kit from Texas Instruments. The
+The iOS Key Fob Simulator simulates the key fob peripheral that
+comes with the CC2540 Mini Development Kit from Texas Instruments. The
 simulator enables an iPhone to masquerade as a key fob peripheral
 providing accelerometer data, key press notifications, battery level
 data, a dual tone immediate alert and transmit power data. Master
@@ -89,7 +90,7 @@ provides the user a manual override to quiet an active Immediate Alert.<br>
 <br>
 <h2>Published Services and Characteristics</h2>
 The hardware version of the key fob exposes nine services:<br>
-&nbsp;&nbsp;&nbsp; <br>
+<br>
 Generic Access Service &nbsp;&nbsp;&nbsp; &nbsp; (0x1800)<br>
 Generic Attribute Service&nbsp;&nbsp;&nbsp;&nbsp; (0x1801)<br>
 Immediate Alert Service&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; (0x1802)<br>
@@ -98,8 +99,7 @@ Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 &nbsp;&nbsp; &nbsp; (0x1803)<br>
 Tx Power Level Service&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; (0x1804)<br>
 Device Information Service&nbsp; (0x180A)<br>
-Battery
-Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Battery Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; (0x180F)<br>
 Accelerometer Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 (0xFFA0)<br>
@@ -132,18 +132,23 @@ specification.<br>
 <br>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Generic
 Access Service Characteristics</span><br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Device Name&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Device
+Name&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; (0x2A00)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Appearance&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+Appearance&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; (0x2A01)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Peripheral Privacy Flag&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Peripheral
+Privacy Flag&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; (0x2A02)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Reconnection Address&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Reconnection
+Address&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; (0x2A03)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Preferred Connection Parameters&nbsp;&nbsp;&nbsp; (0x2A04)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Preferred
+Connection Parameters&nbsp;&nbsp;&nbsp; (0x2A04)<br>
 <br>
 The key fob hardware&nbsp; implements each of these characteristics
 with zero values returned for Appearance, Privacy Flag, and the
@@ -198,7 +203,8 @@ single characteristic:<br>
 &nbsp;&nbsp;<span style="font-weight: bold;"> Alert Service
 Characteristic</span><br>
 <div style="margin-left: 40px;">Alert Level&nbsp; (0x2A06)&nbsp; <br>
-</div><br>
+</div>
+<br>
 Alert Level is defined to be a "Write Without Response" characteristic
 meaning that the Master device should be able to write a value to the
 Alert Level characteristic specifying that no return response from the
@@ -213,8 +219,8 @@ Level Values</span><br>
 <div style="margin-left: 80px;">Mild Alert<br>
 </div>
 <div style="margin-left: 80px;">High Alert<br>
-<br>
 </div>
+<br>
 Writing a "No Alert" value quiets the key fob while the "Mild Alert"
 and "High Alert" values result in two distinct tones to be sounded for
 10 seconds on the key fob. A low frequency tone is associated with
@@ -285,47 +291,72 @@ Information Service Characteristics</span><br>
 </div>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <br>
 <table style="width: 465px; height: 249px;" border="1" cellpadding="2" cellspacing="2">
-
-<tbody><tr><td style="vertical-align: top;"><br>
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><br>
       </td>
-<td style="width: 257px; text-align: left;"><small><small><small><small><small><small><small><small><small>Manufacturer
-Name String</small></small></small></small></small></small></small></small></small></td><td style="width: 235px;">(0x2A29)</td></tr>
-<tr><td style="vertical-align: top;"><br>
+      <td style="width: 257px; text-align: left;"><small><small><small><small><small><small><small><small><small>Manufacturer
+Name String</small></small></small></small></small></small></small></small></small></td>
+      <td style="width: 235px;">(0x2A29)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
       </td>
-<td style="width: 257px; text-align: left;">Model Number
-String</td><td style="width: 235px;">(0x2A24)</td></tr>
-<tr><td style="vertical-align: top;"><br>
+      <td style="width: 257px; text-align: left;">Model Number
+String</td>
+      <td style="width: 235px;">(0x2A24)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
       </td>
-<td style="width: 257px; text-align: left;">Serial Number
-String</td><td style="width: 235px;">(0x2A25)</td></tr>
-<tr><td style="vertical-align: top;"><br>
+      <td style="width: 257px; text-align: left;">Serial Number
+String</td>
+      <td style="width: 235px;">(0x2A25)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
       </td>
-<td style="width: 257px; text-align: left;">Hardware
-Revision String</td><td style="width: 235px;">(0x2A27)</td></tr>
-<tr><td style="vertical-align: top;"><br>
+      <td style="width: 257px; text-align: left;">Hardware
+Revision String</td>
+      <td style="width: 235px;">(0x2A27)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
       </td>
-<td style="width: 257px; text-align: left;">Firmware
-Revision String </td><td style="width: 235px;">(0x2A26)</td></tr>
-<tr><td style="vertical-align: top;"><br>
+      <td style="width: 257px; text-align: left;">Firmware
+Revision String </td>
+      <td style="width: 235px;">(0x2A26)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
       </td>
-<td style="width: 257px; text-align: left;">Software
-Revision String</td><td style="width: 235px;">(0x2A28)</td></tr>
-<tr><td style="vertical-align: top;"><br>
+      <td style="width: 257px; text-align: left;">Software
+Revision String</td>
+      <td style="width: 235px;">(0x2A28)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
       </td>
-<td style="width: 257px; text-align: left;">System
-ID </td><td style="width: 235px;">(0x2A23)</td></tr>
-<tr><td style="vertical-align: top;"><br>
+      <td style="width: 257px; text-align: left;">System
+ID </td>
+      <td style="width: 235px;">(0x2A23)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
       </td>
-<td style="width: 257px; text-align: left;">Regulatory
-Certification Data List</td><td style="width: 235px;">(0x2A2A)</td></tr>
-<tr><td style="vertical-align: top;"><br>
+      <td style="width: 257px; text-align: left;">Regulatory
+Certification Data List</td>
+      <td style="width: 235px;">(0x2A2A)</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
       </td>
-<td style="width: 257px; text-align: left;">PnP
-ID </td><td style="width: 235px;">(0x2A50)</td></tr>
-</tbody>
+      <td style="width: 257px; text-align: left;">PnP
+ID </td>
+      <td style="width: 235px;">(0x2A50)</td>
+    </tr>
+  </tbody>
 </table>
-
-
 <br>
 The key fob hardware implements each of these characteristics but
 simply echoes the&nbsp; characteristic name for the string attributes
@@ -382,8 +413,7 @@ simulated key fob:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; <img src="images/keyfobDevSvc.PNG" style="width: 583px; height: 654px;" alt="keyfob hardware device service"><br>
 </div>
 <h5>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Key Fob Hardware
-Device Information Service</h5>
-<br>
+Device Information Service</h5><br>
 <div style="margin-left: 40px;">&nbsp; &nbsp;&nbsp;&nbsp; <img src="images/simDevSvc.PNG" style="width: 603px; height: 704px;" alt="simulator device service"></div>
 <h5>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Key Fob
 Simulator Device Information Service<br>
@@ -428,7 +458,8 @@ provides accelerometer control (enable/disable) and accelerometer data
 for a tri-axial accelerometer that is embedded in the key fob.&nbsp;
 The Accelerometer Service exposes four characteristics:<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;
 <span style="font-weight: bold;">Accelerometer Service Characteristics</span><br>
 <div style="margin-left: 40px;">Accelerometer
 Enable&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -548,7 +579,7 @@ simulator as shown here:<br>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Simulator
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; Simulator
 Advertising Data<br>
 <br>
 <br>
