@@ -6,6 +6,7 @@
 
 
 
+
   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -26,14 +27,17 @@
         <section id="downloads" class="clearfix">
           <a href="https://github.com/chipk215/keyfobsimulation/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
           <a href="https://github.com/chipk215/keyfobsimulation/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/chipk215/keyfobsimulation" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <img src="images/keyfobnobg.png" style="width: 168px; height: 238px;" alt="Key Fob Image"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  <img src="images/screenshot.PNG" style="width: 148px; height: 256px;" alt="Screen Shot"><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TI
+          <a href="https://github.com/chipk215/keyfobsimulation" id="view-on-github" class="button"><span>View on GitHub</span></a></section><br>
+<div>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  <img style="width: 182px; height: 276px;" alt="Key Fob Image" src="images/keyfobnobg.png">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  <img src="images/screenshot.PNG" style="width: 197px; height: 313px;" alt="Screen Shot">&nbsp; <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp; TI
 Key
-Fob&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Simulator Screen Shot<br>
+Fob&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; Simulator Screen Shot&nbsp; </div>
 <br>
 <h1>iOS Key Fob Simulator</h1>
 The iOS Key Fob Simulator simulates the key fob peripheral that comes
@@ -149,9 +153,7 @@ is always returned when this characteristic is read. The error is
 returned on every peripheral device I have tested including peripheral
 implementations developed using Apple's CBPeripheralManager class in
 which the framework provides the Generic Access Service and
-corresponding Device Name characteristic automatically.&nbsp; I filed a
-defect against the Core Bluetooth Framework identifying this error
-(defect ID 13362139).<br>
+corresponding Device Name characteristic automatically. <br>
 <br>
 As&nbsp; noted, when a peripheral/slave is implemented using the Core
 Bluetooth Framework, and specifically the CBPeripheralManager Class,
@@ -223,8 +225,7 @@ turn off after 10 seconds or by manually turning off the alert using
 the left key on the fob.<br>
 <br>
 A defect in the Core Bluetooth Framework prevents "Write Without
-Response" type writes to be delivered to the peripheral.&nbsp; I have
-filed a defect with Apple (13361937).&nbsp; The work-around requires
+Response" type writes to be delivered to the peripheral. &nbsp; The work-around requires
 the Master device to Write to the characteristic and request a
 confirmational response indicating that the write occurred (or
 failed).&nbsp; This of course, violates the Bluetooth Specification for
@@ -310,8 +311,8 @@ simply echoes the&nbsp; characteristic name for the string attributes without pr
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Characteristic&nbsp;</span>&nbsp;
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style="font-weight: bold;"> Value</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp; Manufacturer
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style="font-weight: bold;"> Value</span><br>&nbsp;&nbsp;&nbsp;&nbsp;
+Manufacturer
 Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 "Manufacturer Name"<br>
 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Model Number&nbsp;&nbsp;
@@ -509,7 +510,7 @@ The iOS Key Fob Simulator falls short of being a high fidelity simulator in thre
 &nbsp;&nbsp; 1)&nbsp; Link Loss - inability to detect a terminated connection by the simulator.<br>
 &nbsp;&nbsp;&nbsp; <br>
 &nbsp;&nbsp;&nbsp; 2) Generic Access Service Device Name Error - iOS
-Framework error prevents the&nbsp;&nbsp;&nbsp; reading the Device Name.<br>
+Framework error prevents the&nbsp;&nbsp;&nbsp; reading the Device Name. <span style="font-style: italic;">The Apple defect ID number is 13362139.</span><br>
 <br>
 &nbsp;&nbsp;&nbsp; 3) Write Without Response Error - aside from not
 being able to implement Link Loss, the Write Without Response Error
@@ -518,26 +519,23 @@ uncovered in the Core Bluetooth Framework.&nbsp; iOS peripherals will
 simply fail to update writable characteristics that clients have
 written using Write Without Response write commands.&nbsp; This defect
 must be fixed by Apple before a legitimate product offering can be made
-using an iOS based Bluetooth 4.0 peripheral.<br>
+using an iOS based Bluetooth 4.0 peripheral. <span style="font-style: italic;">The Apple&nbsp; defect number is 13361937.</span><br>
 <br>
 <br>
 <h2>Bluetooth Low Energy Scanners </h2>
 &nbsp;&nbsp;&nbsp; Available in the App Store:<br>
 <br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  LightBlue - a Bluetooth Low Energy Device Scanner<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; TI BLE MultiTool - a nice
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;  <a style="text-decoration: underline;" href="https://itunes.apple.com/us/app/lightblue/id557428110?mt=8&amp;ign-mpt=uo%3D4">LightBlue</a> - a Bluetooth Low Energy Device Scanner<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a style="text-decoration: underline;" href="https://itunes.apple.com/gb/app/ti-ble-multitool/id580494818?mt=8">TI BLE MultiTool</a> - a nice
 scanner which includes graphical data for characteristics<br>
 <br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; TechBasic - a BASIC
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a style="text-decoration: underline;" href="http://www.byteworks.us/Byte_Works/Collect_Data.html">TechBasic</a> - a BASIC
 environment for iOS devices enabling BASIC programs to be written and
 executed on iOS platforms without needing xCode or a developer's
 license.<br>
 <br>
-<br>
-<div style="margin-left: 40px;">On GIT:<br>
-<br>
-</div>
-&nbsp;&nbsp;&nbsp; https://github.com/chipk215/ble_scanner - my toy scanner project used for exploratory BLE work.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a style="text-decoration: underline;" href="https://github.com/chipk215/ble_scanner">BLE Scanner</a> - Source Code For BLE Scanner on Git Hub &nbsp;  <br>
 <br>
 <br>
 <br>
