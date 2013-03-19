@@ -16,6 +16,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="301" id="UuA-tY-var"/>
+                                    <constraint firstAttribute="height" constant="378" id="tEu-OE-g7S"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="378" type="user" id="zN9-En-f6e"/>
                                 </constraints>
                                 <dataDetectorType key="dataDetectorTypes"/>
@@ -56,25 +57,28 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Wtd-2v-0iQ"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Xyz-Vv-5hW" firstAttribute="top" secondItem="kvU-a2-N1s" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="8N0-CF-hyJ"/>
+                            <constraint firstAttribute="bottom" secondItem="g88-kJ-PUb" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="9Qg-9f-ZHg"/>
                             <constraint firstItem="JCG-es-voc" firstAttribute="leading" secondItem="Xyz-Vv-5hW" secondAttribute="leading" type="default" id="Jn9-1M-a9O"/>
+                            <constraint firstItem="Wtd-2v-0iQ" firstAttribute="centerX" secondItem="KC7-i8-gnu" secondAttribute="centerX" type="default" id="MEF-Y1-qvO"/>
                             <constraint firstItem="Xyz-Vv-5hW" firstAttribute="leading" secondItem="104-BW-pph" secondAttribute="leading" constant="11" id="NbB-Vr-Tpd"/>
+                            <constraint firstItem="Xyz-Vv-5hW" firstAttribute="top" secondItem="104-BW-pph" secondAttribute="top" constant="81" id="OLp-vV-DH2"/>
                             <constraint firstItem="g88-kJ-PUb" firstAttribute="centerX" secondItem="kvU-a2-N1s" secondAttribute="centerX" type="default" id="ZDA-ql-9Ac"/>
                             <constraint firstItem="g88-kJ-PUb" firstAttribute="top" secondItem="JCG-es-voc" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="acn-1K-ggY"/>
-                            <constraint firstAttribute="bottom" secondItem="g88-kJ-PUb" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="bcP-Gu-o9Z"/>
                             <constraint firstItem="g88-kJ-PUb" firstAttribute="leading" secondItem="JCG-es-voc" secondAttribute="leading" type="default" id="hrj-ac-x8S"/>
-                            <constraint firstItem="kvU-a2-N1s" firstAttribute="top" secondItem="104-BW-pph" secondAttribute="top" constant="48" type="user" id="o3O-06-Uit"/>
+                            <constraint firstItem="g88-kJ-PUb" firstAttribute="top" secondItem="Wtd-2v-0iQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="kkA-yX-Na9"/>
                             <constraint firstItem="KC7-i8-gnu" firstAttribute="top" secondItem="104-BW-pph" secondAttribute="top" constant="-4" id="pUp-wz-9TK"/>
                             <constraint firstItem="KC7-i8-gnu" firstAttribute="leading" secondItem="104-BW-pph" secondAttribute="leading" type="default" id="qqA-nH-gF6"/>
                             <constraint firstItem="KC7-i8-gnu" firstAttribute="trailing" secondItem="104-BW-pph" secondAttribute="trailing" type="default" id="rjC-CO-kv6"/>
-                            <constraint firstItem="Xyz-Vv-5hW" firstAttribute="top" secondItem="kvU-a2-N1s" secondAttribute="bottom" constant="13" type="user" id="rpq-kO-Jbt"/>
-                            <constraint firstItem="JCG-es-voc" firstAttribute="top" secondItem="Xyz-Vv-5hW" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="vbN-XJ-tKs"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Wtd-2v-0iQ" id="R0q-lm-niX"/>
                         <outlet property="errorMessageLabel" destination="JCG-es-voc" id="BsW-6T-bz2"/>
                         <outlet property="webView" destination="g88-kJ-PUb" id="Sok-7L-yCL"/>
                     </connections>
@@ -272,6 +276,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KFBAboutViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backButtonHandler:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="errorMessageLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>

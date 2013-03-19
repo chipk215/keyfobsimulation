@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KFBAboutViewController : UIViewController
+@interface KFBAboutViewController : UIViewController<UIWebViewDelegate>
 
 @end
