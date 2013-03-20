@@ -34,6 +34,7 @@
 		D9975ED516FA109700BA993D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9975ED416FA109700BA993D /* Default-568h@2x.png */; };
 		D9975ED716FA10A600BA993D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9975ED616FA10A600BA993D /* Default@2x.png */; };
 		D9975ED916FA10AC00BA993D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D9975ED816FA10AC00BA993D /* Default.png */; };
+		D9975EDB16FA161F00BA993D /* keykobLoResIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D9975EDA16FA161F00BA993D /* keykobLoResIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		D9975ED416FA109700BA993D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		D9975ED616FA10A600BA993D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		D9975ED816FA10AC00BA993D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		D9975EDA16FA161F00BA993D /* keykobLoResIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keykobLoResIcon.png; path = ../keykobLoResIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		D90905B016F2C4EB00C6BB5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9975EDA16FA161F00BA993D /* keykobLoResIcon.png */,
 				D90905F316F2C75000C6BB5C /* KeyfobSimRetina.png */,
 				D90905E916F2C70B00C6BB5C /* tinyYellowLED.png */,
 				D90905EA16F2C70B00C6BB5C /* leftYellowClip1.png */,
@@ -236,6 +239,7 @@
 				D9975ED516FA109700BA993D /* Default-568h@2x.png in Resources */,
 				D9975ED716FA10A600BA993D /* Default@2x.png in Resources */,
 				D9975ED916FA10AC00BA993D /* Default.png in Resources */,
+				D9975EDB16FA161F00BA993D /* keykobLoResIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
