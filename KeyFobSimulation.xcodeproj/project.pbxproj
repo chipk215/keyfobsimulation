@@ -13,9 +13,6 @@
 		D90905B416F2C4EB00C6BB5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D90905B216F2C4EB00C6BB5C /* InfoPlist.strings */; };
 		D90905B616F2C4EB00C6BB5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905B516F2C4EB00C6BB5C /* main.m */; };
 		D90905BA16F2C4EB00C6BB5C /* KFBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905B916F2C4EB00C6BB5C /* KFBAppDelegate.m */; };
-		D90905BC16F2C4EB00C6BB5C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905BB16F2C4EB00C6BB5C /* Default.png */; };
-		D90905BE16F2C4EB00C6BB5C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905BD16F2C4EB00C6BB5C /* Default@2x.png */; };
-		D90905C016F2C4EB00C6BB5C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D90905BF16F2C4EB00C6BB5C /* Default-568h@2x.png */; };
 		D90905CD16F2C50500C6BB5C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90905CC16F2C50500C6BB5C /* CoreBluetooth.framework */; };
 		D90905CF16F2C50F00C6BB5C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90905CE16F2C50F00C6BB5C /* CoreMotion.framework */; };
 		D90905D116F2C51B00C6BB5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90905D016F2C51B00C6BB5C /* AVFoundation.framework */; };
@@ -34,6 +31,9 @@
 		D90905F616F2CA1D00C6BB5C /* KFBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905F516F2CA1D00C6BB5C /* KFBViewController.m */; };
 		D90905F916F2CAEA00C6BB5C /* KFBAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = D90905F816F2CAEA00C6BB5C /* KFBAccelerometer.m */; };
 		D9975DBA16F8C7DF00BA993D /* KFBAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9975DB916F8C7DF00BA993D /* KFBAboutViewController.m */; };
+		D9975ED516FA109700BA993D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9975ED416FA109700BA993D /* Default-568h@2x.png */; };
+		D9975ED716FA10A600BA993D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9975ED616FA10A600BA993D /* Default@2x.png */; };
+		D9975ED916FA10AC00BA993D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D9975ED816FA10AC00BA993D /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,9 +47,6 @@
 		D90905B716F2C4EB00C6BB5C /* KeyFobSimulation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyFobSimulation-Prefix.pch"; sourceTree = "<group>"; };
 		D90905B816F2C4EB00C6BB5C /* KFBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KFBAppDelegate.h; sourceTree = "<group>"; };
 		D90905B916F2C4EB00C6BB5C /* KFBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KFBAppDelegate.m; sourceTree = "<group>"; };
-		D90905BB16F2C4EB00C6BB5C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D90905BD16F2C4EB00C6BB5C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		D90905BF16F2C4EB00C6BB5C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D90905CC16F2C50500C6BB5C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D90905CE16F2C50F00C6BB5C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D90905D016F2C51B00C6BB5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -76,6 +73,9 @@
 		D90905F816F2CAEA00C6BB5C /* KFBAccelerometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBAccelerometer.m; sourceTree = "<group>"; };
 		D9975DB816F8C7DF00BA993D /* KFBAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFBAboutViewController.h; sourceTree = "<group>"; };
 		D9975DB916F8C7DF00BA993D /* KFBAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFBAboutViewController.m; sourceTree = "<group>"; };
+		D9975ED416FA109700BA993D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		D9975ED616FA10A600BA993D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		D9975ED816FA10AC00BA993D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,11 +163,11 @@
 				D90905E516F2C6DB00C6BB5C /* fobNobackground.png */,
 				D90905B116F2C4EB00C6BB5C /* KeyFobSimulation-Info.plist */,
 				D90905B216F2C4EB00C6BB5C /* InfoPlist.strings */,
+				D9975ED816FA10AC00BA993D /* Default.png */,
+				D9975ED616FA10A600BA993D /* Default@2x.png */,
+				D9975ED416FA109700BA993D /* Default-568h@2x.png */,
 				D90905B516F2C4EB00C6BB5C /* main.m */,
 				D90905B716F2C4EB00C6BB5C /* KeyFobSimulation-Prefix.pch */,
-				D90905BB16F2C4EB00C6BB5C /* Default.png */,
-				D90905BD16F2C4EB00C6BB5C /* Default@2x.png */,
-				D90905BF16F2C4EB00C6BB5C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -225,9 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90905B416F2C4EB00C6BB5C /* InfoPlist.strings in Resources */,
-				D90905BC16F2C4EB00C6BB5C /* Default.png in Resources */,
-				D90905BE16F2C4EB00C6BB5C /* Default@2x.png in Resources */,
-				D90905C016F2C4EB00C6BB5C /* Default-568h@2x.png in Resources */,
 				D90905E016F2C64A00C6BB5C /* MainStoryboard.storyboard in Resources */,
 				D90905E616F2C6DB00C6BB5C /* fobNobackground.png in Resources */,
 				D90905EE16F2C70B00C6BB5C /* tinyYellowLED.png in Resources */,
@@ -236,6 +233,9 @@
 				D90905F116F2C70B00C6BB5C /* highbeep.mp3 in Resources */,
 				D90905F216F2C70B00C6BB5C /* lobeep.mp3 in Resources */,
 				D90905F416F2C75000C6BB5C /* KeyfobSimRetina.png in Resources */,
+				D9975ED516FA109700BA993D /* Default-568h@2x.png in Resources */,
+				D9975ED716FA10A600BA993D /* Default@2x.png in Resources */,
+				D9975ED916FA10AC00BA993D /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
