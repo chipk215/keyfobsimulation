@@ -431,12 +431,12 @@ without providing any real data.&nbsp; Examples:<br>
   </tbody>
 </table>
 <br>
-The keyfob hardware does provide data for the non-string type
+The key fob hardware does provide data for the non-string type
 characteristics.<br>
 <br>
 The simulator provides a high fidelity simulation for the Device
 Information Service as illustrated in the screen snapshots captured
-from a BLE client connected to both the hadware Key Fob and the
+from a BLE client connected to both the hardware Key Fob and the
 simulated key fob:<br>
 <br>
 <div style="margin-left: 40px;">&nbsp; &nbsp;&nbsp;
@@ -617,7 +617,7 @@ The Proximity Profile relies on the implementation of these three
 services.<br>
 <br>
 The simulator advertises a different set of services due to the
-inability to implement LInk Loss. The TI defined custom Accelerometer
+inability to implement Link Loss. The TI defined custom Accelerometer
 and Key Press services make up the advertised services for the
 simulator as shown here:<br>
 <br>
@@ -625,7 +625,54 @@ simulator as shown here:<br>
 &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Simulator
 Advertising Data<br>
 <br>
+<h2>Background Operation</h2>
+I wanted to explore running the Key Fob Simulator in the background.
+Running the simulator in the background should be feasible though not
+practical given that advertising is only controllable via a manual
+switch presented on the UI. The app shouldn't be switched to the
+background and left there while continuously advertising.<br>
 <br>
+I did expect background execution to work but found what appears to be another defect in the Core Bluetooth Framework.<br>
+<br>
+Background operation is enabled by adding a "Required background mode"
+entry into the simulator's application property list
+(KeyFobSimulation-Info.plist). The raw value to assign to the
+background mode key is "bluetooth-peripheral" which enables the
+simulator to share data using Corebluetooth when running in the
+background.&nbsp; The user will be queried at run time as to whether to
+permit background communication and the device's privacy settings will
+be changed accordingly.<br>
+<br>
+However, the expected behavior was not realized.&nbsp; After enabling
+background execution, the simulator stopped working correctly when run
+in the foreground. Simply enabling the background mode resulted in the
+simulator not transmitting all of the services it publishes when a
+connecting client issues a command to discover the peripheral's
+services. After a BLE client discovers the simulator and connects, the
+list of services that client receives after issuing a discover services
+command is limited to three or four services that the simulator
+actually exposes.&nbsp; The variability as to whether three or four of
+the nine exposed services seems indeterministic but does indicate a
+possible timing issue on the peripheral.<br>
+<br>
+The list of advertised services is not effected by enabling the background mode.<br>
+<br>
+The issue apparently correlates to the number of services the
+peripheral exposes. If the peripheral only exposes a single service in
+addition to GAP &amp; GATT, the single service is discoverable by the
+BLE client.<br>
+<br>
+If the simulator is actually moved to the background the issue remains. <br>
+<br>
+This background mode&nbsp; behavior is evident in every BLE client
+tested leading to the hypothesis that the issue resides on the
+peripheral/slave side of the connection.<br>
+<br>
+Simply disabling the background mode restores the simulator's correct behavior.<br>
+<br>
+A defect was logged with Apple.<br>
+<br>
+
 <h2><span style="font-weight: bold;">Summary of Issues</span></h2>
 The iOS Key Fob Simulator falls short of being a high fidelity
 simulator in three areas:<br>
@@ -646,6 +693,13 @@ simply fail to update writable characteristics that clients have
 written using Write Without Response write commands.&nbsp; This defect
 must be fixed by Apple before a legitimate product offering can be made
 using an iOS based Bluetooth 4.0 peripheral. <span style="font-style: italic;">The Apple&nbsp; defect number is 13361937.</span><br>
+<br>
+&nbsp;&nbsp;&nbsp; 4) Peripheral Fails to Transmit Exposed Services
+When Background Mode Is Enabled - only a subset of services are
+discoverable when&nbsp; "bluetooth-peripheral" background mode is
+enabled.&nbsp; Simply enabling the background mode results in&nbsp;
+incorrect operation of the simulator&nbsp; when running in the
+foreground.&nbsp; <span style="font-style: italic;">The Apple defect number is 13445414</span>.<br>
 <br>
 <br>
 <h2>Bluetooth Low Energy Scanners </h2>
