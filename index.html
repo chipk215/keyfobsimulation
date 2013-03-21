@@ -89,23 +89,47 @@ as described in the Tx Power Service description. The left key also
 provides the user a manual override to quiet an active Immediate Alert.<br>
 <br>
 <h2>Published Services and Characteristics</h2>
-The hardware version of the key fob exposes nine services:<br>
-<br>
-Generic Access Service &nbsp;&nbsp;&nbsp; &nbsp; (0x1800)<br>
-Generic Attribute Service&nbsp;&nbsp;&nbsp;&nbsp; (0x1801)<br>
-Immediate Alert Service&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; (0x1802)<br>
-Link Loss
-Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp; (0x1803)<br>
-Tx Power Level Service&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; (0x1804)<br>
-Device Information Service&nbsp; (0x180A)<br>
-Battery
-Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; (0x180F)<br>
-Accelerometer Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-(0xFFA0)<br>
-Simple Keys Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp; (0xFFE0)<br>
+The hardware version of the key fob exposes nine services: <br>
+<table style="width: 428px; height: 230px;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td>Generic Access Service</td>
+      <td> (0x1800)</td>
+    </tr>
+    <tr>
+      <td>Generic Attribute Service</td>
+      <td> (0x1801)</td>
+    </tr>
+    <tr>
+      <td>Immediate Alert Service</td>
+      <td> (0x1802)</td>
+    </tr>
+    <tr>
+      <td>Link Loss Service</td>
+      <td> (0x1803)</td>
+    </tr>
+    <tr>
+      <td>Tx Power Level Service</td>
+      <td> (0x1804)</td>
+    </tr>
+    <tr>
+      <td>Device Information Service</td>
+      <td> (0x180A)</td>
+    </tr>
+    <tr>
+      <td>Battery Service</td>
+      <td> (0x180F)</td>
+    </tr>
+    <tr>
+      <td>Accelerometer Service</td>
+      <td> (0xFFA0)</td>
+    </tr>
+    <tr>
+      <td>Simple Keys Service</td>
+      <td> (0xFFE0)</td>
+    </tr>
+  </tbody>
+</table>
 <br>
 The first seven services are <a style="color: rgb(51, 102, 255);" href="http://developer.bluetooth.org/gatt/services/Pages/ServicesHome.aspx" target="_blank">Registered GATT Services</a>&nbsp;
 with the Bluetooth SIG&nbsp; while the Accelerometer and Simple Keys
@@ -131,25 +155,35 @@ Read only with only two of the characteristics (Device Name and
 Appearance) required to be implemented to be compliant with the GATT
 specification.<br>
 <br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">Generic
-Access Service Characteristics</span><br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Device
-Name&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; (0x2A00)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-Appearance&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; (0x2A01)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Peripheral
-Privacy Flag&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; (0x2A02)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Reconnection
-Address&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp; (0x2A03)<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Preferred
-Connection Parameters&nbsp;&nbsp;&nbsp; (0x2A04)<br>
+<table style="width: 500px; height: 133px;" border="1" cellpadding="2" cellspacing="2">
+  <caption style="font-weight: bold;">Generic Access Service
+Characteristics</caption> <tbody>
+    <tr>
+      <td>Device
+Name</td>
+      <td> (0x2A00)</td>
+    </tr>
+    <tr>
+      <td>Appearance</td>
+      <td> (0x2A01)</td>
+    </tr>
+    <tr>
+      <td>Peripheral
+Privacy Flag</td>
+      <td> (0x2A02)</td>
+    </tr>
+    <tr>
+      <td>Reconnection
+Address </td>
+      <td> (0x2A03)</td>
+    </tr>
+    <tr>
+      <td>Preferred
+Connection Parameters </td>
+      <td> (0x2A04)</td>
+    </tr>
+  </tbody>
+</table>
 <br>
 The key fob hardware&nbsp; implements each of these characteristics
 with zero values returned for Appearance, Privacy Flag, and the
@@ -287,12 +321,9 @@ characteristics defined by the Device Information Service are Read only
 and none are required to be implemented since each characteristic is
 considered optional.<br>
 <br>
-<div style="margin-left: 40px;"><span style="font-weight: bold;">Device
-Information Service Characteristics</span><br>
-</div>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <br>
 <table style="width: 465px; height: 249px;" border="1" cellpadding="2" cellspacing="2">
-  <tbody>
+  <caption style="font-weight: bold;">Device Information Service
+Characteristics</caption> <tbody>
     <tr>
       <td style="vertical-align: top;"><br>
       </td>
@@ -460,28 +491,46 @@ provides accelerometer control (enable/disable) and accelerometer data
 for a tri-axial accelerometer that is embedded in the key fob.&nbsp;
 The Accelerometer Service exposes four characteristics:<br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-&nbsp;
-<span style="font-weight: bold;">Accelerometer Service Characteristics</span><br>
-<div style="margin-left: 40px;">Accelerometer
-Enable&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-(0xFFA1)<br>
-</div>
-<div style="margin-left: 40px;">Accelerometer Dynamic Range&nbsp;
-(0xFFA2)<br>
-</div>
-<div style="margin-left: 40px;">Accelerometer X Axis
-Data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-(0xFFA3)<br>
-</div>
-<div style="margin-left: 40px;">Accelerometer Y Axis
-Data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-(0xFFA4)<br>
-</div>
-<div style="margin-left: 40px;">Accelerometer Z Axis
-Data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; (0xFFA5)<br>
+<table style="width: 520px; height: 122px;" border="1" cellpadding="2" cellspacing="2">
+<caption style="font-weight: bold;">Accelerometer Service Characteristics</caption>
+  <tbody>
+    <tr>
+      <td>
+      <div style="margin-left: 40px;">Accelerometer
+Enable</div>
+      </td>
+      <td> (0xFFA1)</td>
+    </tr>
+    <tr>
+      <td>
+      <div style="margin-left: 40px;">Accelerometer Dynamic Range</div>
+      </td>
+      <td> (0xFFA2)</td>
+    </tr>
+    <tr>
+      <td>
+      <div style="margin-left: 40px;">Accelerometer X Axis
+Data</div>
+      </td>
+      <td> (0xFFA3)</td>
+    </tr>
+    <tr>
+      <td>
+      <div style="margin-left: 40px;">Accelerometer Y Axis
+Data</div>
+      </td>
+      <td> (0xFFA4)</td>
+    </tr>
+    <tr>
+      <td>
+      <div style="margin-left: 40px;">Accelerometer Z Axis
+Data</div>
+      </td>
+      <td> (0xFFA5)</td>
+    </tr>
+  </tbody>
+</table>
 <br>
-</div>
 The Accelerometer Enable characteristic is a Read+Write characteristic.
 A non zero value written to the characteristic enables the
 accelerometer which then begins generating data. A zero value written
